@@ -163,6 +163,26 @@ a{color:#e07b1a;text-decoration:none}
   border-bottom:1px dashed var(--bd);
   padding:0 0 6px;margin:18px 0 10px;
 }
+
+/* ── H3 WITH SUB-NUMBER BADGE ── */
+.h3-num{
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px dashed var(--bd);
+  padding:0 0 8px;margin:18px 0 10px;
+}
+.h3-num .h3-badge{
+  background:var(--org);color:#fff;
+  font-size:9px;font-weight:700;
+  min-width:36px;height:36px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  flex-shrink:0;text-align:center;line-height:1.15;
+}
+.h3-num .h3-badge .hb-n{font-size:12px;font-weight:700;line-height:1}
+.h3-num .h3-badge .hb-sub{font-size:7px;opacity:.85}
+.h3-num .h3-txt{
+  font-size:13.5px;font-weight:700;color:var(--brn);
+  line-height:1.5;margin:0;word-break:keep-all;min-width:0;flex:1;
+}
 .sec-body p{font-size:13.5px;line-height:1.9;color:var(--text);margin-bottom:12px}
 .sec-body p:last-child{margin-bottom:0}
 
@@ -229,7 +249,7 @@ a{color:#e07b1a;text-decoration:none}
 .reason-badge .rb-n{font-size:14px;font-weight:700;line-height:1}
 .reason-icon{width:24px;height:24px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .reason-icon svg{width:100%;height:100%;fill:var(--org)}
-.reason-card-ttl{font-size:12.5px;font-weight:700;color:#222;line-height:1.5;margin:0;word-break:keep-all;overflow-wrap:break-word;min-width:0;flex:1}
+.reason-card-ttl{font-size:12.5px;font-weight:700;color:#222;line-height:1.5;margin:0;word-break:keep-all;min-width:0;flex:1}
 .reason-card-body{padding:12px 14px;background:#fff}
 .reason-point{
   background:var(--org-l);border-left:3px solid var(--org);
@@ -697,7 +717,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>オーダーサイト選びで見落としがちなのが「納品形態」です。データ納品や丸まったポスター状態で届くサイトを選んでしまうと、自分でサイズの合う額縁を買いに行く手間が発生します。お祝いの席でそのまま手渡しし、その後すぐに部屋に飾れるよう「額縁に入った状態で届くか」を必ず確認しましょう。</p>
 
       <div class="h3">ギリギリの注文でも安心できる「最短納期」の確認方法</div>
-      <p>「お祝いの日まであと1週間しかない！」というケースは少なくありません。一般的な似顔絵オーダーサイトの標準納期は10日〜3週間程度が中心で、特急プランを設けているサイトでも最短3営業日〜7日程度が目安です。その中で、クオリティを落とさず数日で仕上げてくれる業者は貴重な存在といえます。</p>
+      <p>「お祝いの日まであと1週間しかない！」というケースは少なくありません。一般的な手描き似顔絵の相場納期は2〜3週間程度が中心で、ギリギリのタイミングでは間に合わないサイトも少なくありません。その中で、クオリティを落とさず数日で仕上げてくれる業者は貴重な存在といえます。</p>
     </div>
   </section>
 
@@ -710,19 +730,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-body">
       <p>ココナラなどのスキルマーケットから、複数の似顔絵師（作家）が在籍する専門サイトまで、依頼先は多岐にわたります。以下の5つのポイントで比較しましょう。</p>
 
-      <div class="h3">① 価格相場と追加料金の仕組み</div>
+      <div class="h3-num">
+        <span class="h3-badge"><span class="hb-n">3-1</span><span class="hb-sub">比較</span></span>
+        <p class="h3-txt">価格相場と<wbr>追加料金の仕組み</p>
+      </div>
       <p>家族の似顔絵の価格相場は、<strong>1人あたり7,000円台〜15,000円台</strong>が中心です。ただし多くのサイトは「基本料金＋1名追加ごとの加算」という料金体系のため、家族の人数が多いほど総額が変わります。ペットの追加、衣装指定、立体加工などのオプションが別料金になっているケースもあるため、見積もり時点で「何名まで基本料金に含まれるか」「追加1名・追加ペットの料金はいくらか」を必ず確認してください。</p>
 
-      <div class="h3">② 似顔絵の「タッチ（画風）」で仕上がりの印象が変わる</div>
+      <div class="h3-num">
+        <span class="h3-badge"><span class="hb-n">3-2</span><span class="hb-sub">比較</span></span>
+        <p class="h3-txt">似顔絵の「タッチ（画風）」で<wbr>仕上がりの印象が変わる</p>
+      </div>
       <p>似顔絵と一口に言っても、水彩・色鉛筆・デジタル塗り・厚塗りイラストなど、サイトによって主体となるタッチ（技法）はさまざまです。デジタルタッチはくっきりとした発色が特徴ですが、水彩タッチは絵の具の滲みや余白がアナログならではの温かみを生み出します。長寿祝いや結婚記念日など「形に残して飾る」用途では、経年でも味わいが変わりにくい水彩タッチが選ばれる傾向にあります。注文前に、そのサイトの基本タッチが贈る相手の雰囲気に合うかを確認しておきましょう。</p>
 
-      <div class="h3">③ 10万枚の制作実績から見る年代・お祝い用途別の人気テイスト傾向</div>
+      <div class="h3-num">
+        <span class="h3-badge"><span class="hb-n">3-3</span><span class="hb-sub">比較</span></span>
+        <p class="h3-txt">制作実績から見る<wbr>年代・お祝い用途別の人気テイスト傾向</p>
+      </div>
       <p>還暦祝いなら「華やかな水彩」、結婚記念日なら「少しリアルでおしゃれなタッチ」など、用途によって最適な画風は異なります。幅広い年代・家族構成を描いてきた実績が豊富なサイトほど、TPOに合わせたテイストの提案力に優れています。</p>
 
-      <div class="h3">④ 個人依頼と専門オーダーサイトの品質・対応の違い</div>
+      <div class="h3-num">
+        <span class="h3-badge"><span class="hb-n">3-4</span><span class="hb-sub">比較</span></span>
+        <p class="h3-txt">個人依頼と<wbr>専門オーダーサイトの品質・対応の違い</p>
+      </div>
       <p>個人間のやり取りとなるスキルマーケットは費用を抑えやすい反面、作家のスケジュール都合で納期が遅れたり、連絡が途絶えたりするリスクがゼロではありません。一方、法人運営の専門サイトは、品質管理や顧客対応（カスタマーサポート）が徹底されており、初めての注文でも心理的障壁が低くなります。</p>
 
-      <div class="h3">⑤ 画風や仕上がりを注文前に具体的にイメージできる実績写真の豊富さ</div>
+      <div class="h3-num">
+        <span class="h3-badge"><span class="hb-n">3-5</span><span class="hb-sub">比較</span></span>
+        <p class="h3-txt">画風や仕上がりを<wbr>注文前に具体的にイメージできる<wbr>実績写真の豊富さ</p>
+      </div>
       <p>「似るか不安」という悩みは、公式サイトのギャラリーを見ることで解消できます。完成した作品だけでなく、「元となった写真」と「購入者の感想」がセットで掲載されているサイトは、再現性と顧客満足度に自信がある証拠です。</p>
     </div>
   </section>
@@ -832,6 +867,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="sec-body" style="padding:0;border:none">
       <p style="padding:18px 16px 0">ここまで解説した「失敗しない条件」をすべて高い次元で満たし、10万枚以上の実績で選ばれ続けているのが似顔絵専門サイトの「似顔絵なつみかん」です。</p>
+      <p style="padding:0 16px;font-size:11px;color:#999">※本記事内の価格・実績数値は似顔絵なつみかんの自社実績に基づく紹介です。ご注文の際は他サービスとの比較検討もあわせておすすめします。</p>
 
       <div class="str-card" style="margin:16px 16px 20px">
         <div class="str-hd">
@@ -839,7 +875,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>手描き水彩なのに<wbr>「最短翌日」でのスピード納品</h3>
         </div>
         <div class="str-body">
-          <p>似顔絵なつみかんの最大の魅力は、デジタルではなく「水彩絵の具による完全手描き」でありながら、最短翌日での制作・発送が可能な点です。一般的な似顔絵オーダーサイトの標準納期が10日前後であることを踏まえると、ギリギリのタイミングでお祝いの準備を始めた方にとって、心強い味方になります。</p>
+          <p>似顔絵なつみかんの最大の魅力は、デジタルではなく「水彩絵の具による完全手描き」でありながら、最短翌日での制作・発送が可能な点です。一般的な手描き似顔絵の相場納期が2〜3週間程度であることを踏まえると、ギリギリのタイミングでお祝いの準備を始めた方にとって、心強い味方になります。</p>
         </div>
       </div>
 
@@ -927,7 +963,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="sum-list">
           <li><strong>完全手描き水彩でありながら最短翌日発送</strong>——ギリギリの注文でも安心</li>
           <li><strong>全商品額縁付き</strong>——届いたその日に飾れる仕上がり</li>
-          <li><strong>家族全員・ペットの合成作画に対応</strong>——離れて暮らす家族や亡くなったペットも一緒に</li>
+          <li><strong>家族全員・ペットの合成作画に対応</strong>——離れて暮らす家族や大切なペットも一緒に</li>
           <li><strong>プロの書道家による手描きメッセージ</strong>——感謝の言葉を作品に添えられる</li>
           <li><strong>10万枚以上の制作実績</strong>——豊富な実物作品とお客様の声で安心して依頼できる</li>
         </ul>
