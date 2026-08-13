@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>似顔絵料金シミュレーター｜手描き似顔絵なつみかん</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="タッチ・サイズ・人数・オプションを選ぶだけで、手描き似顔絵の税込料金がその場でわかる料金シミュレーターです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:#333;background:#f7f5f2;line-height:1.85;padding-bottom:120px}
+img{max-width:100%;height:auto;display:block}
+a{color:#e07b1a;text-decoration:none}
+
+:root{
+  --org:#e07b1a;
+  --org-d:#c0620d;
+  --org-l:#fff7f0;
+  --org-m:#ffeedd;
+  --brn:#7c4a1e;
+  --text:#333;
+  --sub:#666;
+  --bd:#e8d5c0;
+  --radius:6px;
+  --ok:#2e8b57;
+}
+
+.wrap{max-width:720px;margin:0 auto;padding:0 14px}
+
+/* ── SITE HEADER ── */
+.shead{
+  background:#fff;border-bottom:2px solid var(--org);
+  padding:12px 16px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:200;
+  box-shadow:0 1px 6px rgba(0,0,0,.08);
+}
+.shead-logo{font-size:14px;font-weight:700;color:var(--org-d);line-height:1.3}
+.shead-logo small{display:block;font-size:10px;color:#999;font-weight:400}
+
+.hero{
+  background:linear-gradient(135deg,var(--org) 0%,var(--org-d) 100%);
+  color:#fff;text-align:center;padding:26px 16px 22px;
+}
+.hero h1{font-size:19px;font-weight:900;letter-spacing:.03em;margin-bottom:6px}
+.hero p{font-size:12.5px;opacity:.92}
+
+/* ── STEP TABS (display only) ── */
+.steps{display:flex;gap:4px;margin:16px 0 10px}
+.step{
+  flex:1;text-align:center;padding:8px 2px;border-radius:4px;
+  background:#d8c6ae;color:#fff;font-size:10.5px;font-weight:700;line-height:1.5;
+}
+.step small{display:block;font-size:9px;font-weight:400;opacity:.85}
+.step.active{background:var(--org)}
+
+/* ── CARD / SECTION ── */
+.card{background:#fff;border-radius:var(--radius);margin-bottom:14px;overflow:hidden;border:1px solid var(--bd)}
+.card-hd{
+  background:var(--org);color:#fff;font-weight:700;font-size:14px;
+  padding:10px 14px;
+}
+.blk{padding:14px}
+.blk + .blk{border-top:1px solid #f0e8dc}
+.blk-hd{
+  background:var(--org-l);border:1px solid var(--bd);border-radius:4px;
+  padding:8px 12px;display:flex;align-items:center;justify-content:space-between;
+  font-size:13px;font-weight:700;color:var(--brn);margin-bottom:10px;
+}
+.req{background:#e2483d;color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;flex-shrink:0}
+.opt{background:#9a9a9a;color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;flex-shrink:0}
+
+select{
+  width:100%;padding:11px 12px;font-size:14px;border:1px solid #444;border-radius:4px;
+  background:#fff;font-family:inherit;color:#333;appearance:none;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3e%3cpath fill='%23e07b1a' d='M0 0l6 8 6-8z'/%3e%3c/svg%3e");
+  background-repeat:no-repeat;background-position:right 14px center;background-size:11px;
+}
+
+.size-opt{
+  border:2px solid var(--bd);border-radius:6px;padding:12px 14px;margin-bottom:10px;
+  display:flex;align-items:center;gap:12px;cursor:pointer;position:relative;background:#fff;
+}
+.size-opt input{width:18px;height:18px;accent-color:var(--org);flex-shrink:0}
+.size-opt.sel{border-color:var(--org);background:#fffbea}
+.size-opt .info{flex:1}
+.size-opt .info .nm{font-weight:700;font-size:14px}
+.size-opt .info .dim{font-size:11px;color:var(--sub)}
+.size-opt .info .pr{color:#d1391f;font-weight:700;font-size:14px;margin-top:2px}
+.size-opt .info .pr small{font-size:11px;font-weight:400;color:var(--sub)}
+.badge{position:absolute;top:-9px;right:10px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;color:#fff}
+.badge.b1{background:var(--org)}
+.badge.b2{background:#e88ba0}
+.badge.b3{background:#8bc34a}
+
+.people-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+.people-table th,.people-table td{border:1px solid var(--bd);padding:6px 4px;text-align:center}
+.people-table th{background:var(--org-l);color:var(--brn)}
+.people-table td.add{color:#d1391f;font-weight:700}
+
+.radio-row{display:flex;gap:14px;flex-wrap:wrap}
+.radio-item{display:flex;align-items:center;gap:6px;font-size:13.5px}
+.radio-item input{width:16px;height:16px;accent-color:var(--org)}
+
+.chk-row{display:flex;align-items:flex-start;gap:8px;cursor:pointer}
+.chk-row input{width:18px;height:18px;margin-top:2px;accent-color:var(--org);flex-shrink:0}
+.chk-row .nm{font-weight:700;font-size:13.5px}
+.chk-row .pr{color:#d1391f;font-weight:700;font-size:13px;margin-left:4px}
+.desc{font-size:11.5px;color:var(--sub);margin-top:6px;line-height:1.7}
+.sub-select{margin-top:10px}
+
+/* ── STICKY TOTAL BAR ── */
+.totalbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:300;
+  background:#fff;border-top:3px solid var(--org);
+  box-shadow:0 -4px 14px rgba(0,0,0,.12);
+  padding:10px 14px 12px;
+}
+.totalbar .inner{max-width:720px;margin:0 auto}
+.totalbar .row{display:flex;align-items:baseline;justify-content:space-between}
+.totalbar .lbl{font-size:12px;color:var(--sub);font-weight:700}
+.totalbar .amt{font-size:24px;font-weight:900;color:#d1391f}
+.totalbar .amt small{font-size:12px;font-weight:700;color:var(--sub)}
+.totalbar .toggle{font-size:11px;color:var(--org-d);text-align:right;margin-top:2px;cursor:pointer;text-decoration:underline}
+
+.breakdown{background:var(--org-l);border:1px solid var(--bd);border-radius:6px;padding:12px 14px;margin-bottom:14px}
+.breakdown h2{font-size:13px;color:var(--brn);margin-bottom:8px}
+.brk-row{display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px dashed var(--bd)}
+.brk-row:last-child{border-bottom:none}
+.brk-row .v{font-weight:700}
+.brk-row.sum{border-top:2px solid var(--org);margin-top:4px;padding-top:8px;font-weight:700;font-size:14px}
+.brk-row.sum .v{color:#d1391f;font-size:17px}
+.note{font-size:11px;color:var(--sub);margin-top:10px;line-height:1.7}
+
+footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
+</style>
+</head>
+<body>
+
+<div class="shead">
+  <div class="shead-logo">手描き似顔絵 なつみかん<small>似顔絵料金シミュレーター</small></div>
+</div>
+
+<div class="hero">
+  <h1>似顔絵料金シミュレーター</h1>
+  <p>タッチ・サイズ・人数・オプションを選ぶだけで、税込価格がすぐわかります</p>
+</div>
+
+<div class="wrap">
+
+  <div class="steps">
+    <div class="step active">STEP 01<small>タッチ/サイズ</small></div>
+    <div class="step active">STEP 02<small>額縁/人数</small></div>
+    <div class="step active">STEP 03<small>オプション</small></div>
+    <div class="step">STEP 04<small>ご注文情報</small></div>
+  </div>
+
+  <!-- ============ STEP 1 ============ -->
+  <div class="card">
+    <div class="card-hd">タッチ・サイズ</div>
+    <div class="blk">
+      <div class="blk-hd">似顔絵の用途を選択ください<span class="req">必須</span></div>
+      <select id="purpose">
+        <option>長寿のお祝いに</option>
+        <option>結婚記念日に</option>
+        <option>誕生日のお祝いに</option>
+        <option>カップル記念日</option>
+        <option>退職・定年祝い</option>
+        <option>ペットの似顔絵</option>
+        <option>ご家族の似顔絵</option>
+        <option>卒業、入学祝い</option>
+        <option>引っ越し祝い</option>
+        <option>出産祝い</option>
+        <option>開店祝い(お店の〇周年)</option>
+        <option>優勝景品(〇〇大会など)</option>
+        <option>Instagram、YouTube等、SNSアイコン</option>
+        <option>ウェルカム、サンクスボード</option>
+        <option>クリスマスプレゼントに</option>
+        <option>その他</option>
+      </select>
+      <div class="note">※用途の選択は料金に影響しません（ご参考情報です）</div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-hd">似顔絵サイズを選択ください<span class="req">必須</span></div>
+
+      <label class="size-opt sel" data-size="S">
+        <input type="radio" name="size" value="S" checked>
+        <div class="info">
+          <div class="nm">Sサイズ <span style="font-weight:400">2L（17.8cm×12.7cm）</span></div>
+          <div class="pr">9,850円 <small>（税込 10,835円）</small></div>
+        </div>
+        <span class="badge b1">最安値</span>
+      </label>
+
+      <label class="size-opt" data-size="M">
+        <input type="radio" name="size" value="M">
+        <div class="info">
+          <div class="nm">Mサイズ <span style="font-weight:400">A4（29.7cm×21.0cm）</span></div>
+          <div class="pr">14,900円 <small>（税込 16,390円）</small></div>
+        </div>
+        <span class="badge b2">人気NO.1</span>
+      </label>
+
+      <label class="size-opt" data-size="L">
+        <input type="radio" name="size" value="L">
+        <div class="info">
+          <div class="nm">Lサイズ <span style="font-weight:400">A3（42.0cm×29.7cm）</span></div>
+          <div class="pr">33,000円 <small>（税込 36,300円）</small></div>
+        </div>
+        <span class="badge b3">コスパ◎</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- ============ STEP 2 ============ -->
+  <div class="card">
+    <div class="card-hd">額縁・人数</div>
+    <div class="blk">
+      <div class="blk-hd">似顔絵の人数を選択ください<span class="req">必須</span></div>
+      <select id="people"></select>
+
+      <p style="font-size:11.5px;color:var(--sub);margin-top:10px">人数による追加料金は下記をご参照ください。</p>
+      <table class="people-table">
+        <tr><th>サイズ</th><th>追加料金</th><th>最大人数</th></tr>
+        <tr><td>S</td><td class="add">2名様から +3,850円</td><td>3名様</td></tr>
+        <tr><td>M</td><td class="add">3名様から +4,950円</td><td>6名様*</td></tr>
+        <tr><td>L</td><td class="add">5名様から +5,500円</td><td>20名様*</td></tr>
+      </table>
+      <div class="note">*各サイズの最大人数を超える似顔絵をご希望の場合は、お手数ですがお問い合わせ下さい。当店でお見積りをし、返信させて頂きます。</div>
+    </div>
+
+    <div class="blk">
+      <div class="blk-hd">ラッピングを希望する<span class="req">必須</span></div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="wrap" value="1"> 希望する（手数料550円）</label>
+        <label class="radio-item"><input type="radio" name="wrap" value="0" checked> 希望しない</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STEP 3 ============ -->
+  <div class="card">
+    <div class="card-hd">オプション</div>
+
+    <div class="blk">
+      <label class="chk-row">
+        <input type="checkbox" id="data">
+        <div>
+          <span class="nm">データ納品を希望する</span><span class="pr">(3,300円)</span>
+          <div class="desc">LINEやTwitterのアイコン・スマホの待受画面・SNSにアップなど、様々なご用途で使用できるオプションです。またコンビニプリントなどで、お祝いの席の皆様にお配りする事も可能です。<br>※著作権フリー：権利ごと譲渡致しますのでご自由にお使いいただけます。<br>※高解像度＆高画質でポスター印刷も可能。</div>
+        </div>
+      </label>
+    </div>
+
+    <div class="blk">
+      <label class="chk-row">
+        <input type="checkbox" id="chanchanko">
+        <div>
+          <span class="nm">ちゃんちゃんこセットを希望する</span><span class="pr">(1枚 5,478円〜)</span>
+        </div>
+      </label>
+      <div class="sub-select">
+        <select id="chanchankoColor" disabled>
+          <option value="">ご希望の方は色を選択</option>
+          <option value="赤(還暦)">赤(還暦)</option>
+          <option value="黄色(米寿)">黄色(米寿)</option>
+          <option value="紫(古希・喜寿・傘寿・卒寿)">紫(古希・喜寿・傘寿・卒寿)</option>
+        </select>
+      </div>
+      <div class="desc">【セット内容】●ちゃんちゃんこ ●頭巾 ●豪華化粧箱 ●書道作家直筆扇子 ●当店オリジナル生まれた年の出来事年表</div>
+    </div>
+
+    <div class="blk">
+      <label class="chk-row">
+        <input type="checkbox" id="namepoem">
+        <div>
+          <span class="nm">ネームポエムを希望する</span><span class="pr">(1枚 7,480円〜)</span>
+        </div>
+      </label>
+      <div class="sub-select">
+        <select id="namepoemPeople" disabled>
+          <option value="">ご希望の方は人数を選択</option>
+          <option value="7480">1人（￥7,480）</option>
+          <option value="10780">2人（￥10,780）</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BREAKDOWN ============ -->
+  <div class="breakdown">
+    <h2>お見積り内訳（税込）</h2>
+    <div id="brk"></div>
+  </div>
+
+  <div class="note" style="margin-bottom:20px">
+    ※本シミュレーターの金額は概算です。ご注文内容の詳細やキャンペーン適用状況により実際の金額と異なる場合があります。<br>
+    ※表示価格はすべて消費税10%込みです。
+  </div>
+
+  <footer>手描き似顔絵 なつみかん</footer>
+</div>
+
+<div class="totalbar">
+  <div class="inner">
+    <div class="row">
+      <div class="lbl">お見積り合計（税込）</div>
+    </div>
+    <div class="row">
+      <div class="amt" id="total">￥0</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const SIZES = {
+  S: { name:'Sサイズ（2L）', base:10835, threshold:1, maxPeople:3,  perPerson:3850 },
+  M: { name:'Mサイズ（A4）', base:16390, threshold:2, maxPeople:6,  perPerson:4950 },
+  L: { name:'Lサイズ（A3）', base:36300, threshold:4, maxPeople:20, perPerson:5500 }
+};
+
+const yen = n => '￥' + n.toLocaleString('ja-JP');
+
+function currentSize(){
+  return document.querySelector('input[name="size"]:checked').value;
+}
+
+function populatePeople(){
+  const size = currentSize();
+  const cfg = SIZES[size];
+  const sel = document.getElementById('people');
+  const prevVal = sel.value;
+  sel.innerHTML = '';
+  for(let i=1;i<=cfg.maxPeople;i++){
+    const extra = Math.max(0, i - cfg.threshold) * cfg.perPerson;
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = extra > 0 ? `${i}名様（追加 +${extra.toLocaleString('ja-JP')}円）` : `${i}名様`;
+    sel.appendChild(opt);
+  }
+  if(prevVal && Number(prevVal) <= cfg.maxPeople){
+    sel.value = prevVal;
+  }
+}
+
+function updateSizeSelection(){
+  document.querySelectorAll('.size-opt').forEach(el=>{
+    el.classList.toggle('sel', el.dataset.size === currentSize());
+  });
+}
+
+function calc(){
+  const size = currentSize();
+  const cfg = SIZES[size];
+  const people = Number(document.getElementById('people').value || 1);
+  const extraPeople = Math.max(0, people - cfg.threshold) * cfg.perPerson;
+
+  const wrap = Number(document.querySelector('input[name="wrap"]:checked').value) ? 550 : 0;
+
+  const dataOn = document.getElementById('data').checked;
+  const dataFee = dataOn ? 3300 : 0;
+
+  const chanchankoOn = document.getElementById('chanchanko').checked;
+  const chanchankoFee = chanchankoOn ? 5478 : 0;
+  document.getElementById('chanchankoColor').disabled = !chanchankoOn;
+
+  const namepoemOn = document.getElementById('namepoem').checked;
+  const npSel = document.getElementById('namepoemPeople');
+  npSel.disabled = !namepoemOn;
+  const namepoemFee = namepoemOn ? Number(npSel.value || 0) : 0;
+
+  const total = cfg.base + extraPeople + wrap + dataFee + chanchankoFee + namepoemFee;
+
+  const rows = [];
+  rows.push([`${cfg.name}（1名様分）`, cfg.base]);
+  if(extraPeople > 0) rows.push([`人数追加（${people}名様）`, extraPeople]);
+  if(wrap > 0) rows.push(['ラッピング手数料', wrap]);
+  if(dataFee > 0) rows.push(['データ納品', dataFee]);
+  if(chanchankoFee > 0) rows.push(['ちゃんちゃんこセット', chanchankoFee]);
+  if(namepoemFee > 0) rows.push([`ネームポエム（${npSel.options[npSel.selectedIndex].text.split('（')[0]}）`, namepoemFee]);
+
+  const brk = document.getElementById('brk');
+  brk.innerHTML = rows.map(r=>`<div class="brk-row"><span>${r[0]}</span><span class="v">${yen(r[1])}</span></div>`).join('')
+    + `<div class="brk-row sum"><span>合計金額（税込）</span><span class="v">${yen(total)}</span></div>`;
+
+  document.getElementById('total').innerHTML = yen(total);
+}
+
+document.querySelectorAll('input[name="size"]').forEach(r=>{
+  r.addEventListener('change', ()=>{ updateSizeSelection(); populatePeople(); calc(); });
+});
+document.querySelectorAll('.size-opt').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    el.querySelector('input[name="size"]').checked = true;
+    updateSizeSelection(); populatePeople(); calc();
+  });
+});
+['people'].forEach(id=>document.getElementById(id).addEventListener('change', calc));
+document.querySelectorAll('input[name="wrap"]').forEach(r=>r.addEventListener('change', calc));
+['data','chanchanko','namepoem'].forEach(id=>document.getElementById(id).addEventListener('change', calc));
+document.getElementById('chanchankoColor').addEventListener('change', calc);
+document.getElementById('namepoemPeople').addEventListener('change', calc);
+
+populatePeople();
+calc();
+</script>
+</body>
+</html>
