@@ -207,12 +207,12 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
       <div class="blk-hd">似顔絵の人数を選択ください<span class="req">必須</span></div>
       <select id="people"></select>
 
-      <p style="font-size:11.5px;color:var(--sub);margin-top:10px">人数による追加料金は下記をご参照ください（1〜20名様までお選びいただけます）。</p>
+      <p style="font-size:11.5px;color:var(--sub);margin-top:10px">人数による追加料金・選択可能人数は下記をご参照ください。</p>
       <table class="people-table">
-        <tr><th>サイズ</th><th>追加料金</th></tr>
-        <tr><td>S</td><td class="add">2名様から1名ずつ +3,850円</td></tr>
-        <tr><td>M</td><td class="add">3名様から1名ずつ +4,950円</td></tr>
-        <tr><td>L</td><td class="add">5名様から1名ずつ +5,500円</td></tr>
+        <tr><th>サイズ</th><th>追加料金</th><th>最大人数</th></tr>
+        <tr><td>S</td><td class="add">2名様から1名ずつ +3,850円</td><td>3名様</td></tr>
+        <tr><td>M</td><td class="add">3名様から1名ずつ +4,950円</td><td>6名様</td></tr>
+        <tr><td>L</td><td class="add">5名様から1名ずつ +5,500円</td><td>20名様</td></tr>
       </table>
     </div>
 
@@ -301,8 +301,8 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
 
 <script>
 const SIZES = {
-  S: { name:'Sサイズ（2L）', base:10835, threshold:1, maxPeople:20, perPerson:3850 },
-  M: { name:'Mサイズ（A4）', base:16390, threshold:2, maxPeople:20, perPerson:4950 },
+  S: { name:'Sサイズ（2L）', base:10835, threshold:1, maxPeople:3,  perPerson:3850 },
+  M: { name:'Mサイズ（A4）', base:16390, threshold:2, maxPeople:6,  perPerson:4950 },
   L: { name:'Lサイズ（A3）', base:36300, threshold:4, maxPeople:20, perPerson:5500 }
 };
 
