@@ -48,15 +48,6 @@ a{color:#e07b1a;text-decoration:none}
 .hero h1{font-size:19px;font-weight:900;letter-spacing:.03em;margin-bottom:6px}
 .hero p{font-size:12.5px;opacity:.92}
 
-/* ── STEP TABS (display only) ── */
-.steps{display:flex;gap:4px;margin:16px 0 10px}
-.step{
-  flex:1;text-align:center;padding:8px 2px;border-radius:4px;
-  background:#d8c6ae;color:#fff;font-size:10.5px;font-weight:700;line-height:1.5;
-}
-.step small{display:block;font-size:9px;font-weight:400;opacity:.85}
-.step.active{background:var(--org)}
-
 /* ── CARD / SECTION ── */
 .card{background:#fff;border-radius:var(--radius);margin-bottom:14px;overflow:hidden;border:1px solid var(--bd)}
 .card-hd{
@@ -151,13 +142,6 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
 
 <div class="wrap">
 
-  <div class="steps">
-    <div class="step active">STEP 01<small>タッチ/サイズ</small></div>
-    <div class="step active">STEP 02<small>額縁/人数</small></div>
-    <div class="step active">STEP 03<small>オプション</small></div>
-    <div class="step">STEP 04<small>ご注文情報</small></div>
-  </div>
-
   <!-- ============ STEP 1 ============ -->
   <div class="card">
     <div class="card-hd">タッチ・サイズ</div>
@@ -223,14 +207,13 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
       <div class="blk-hd">似顔絵の人数を選択ください<span class="req">必須</span></div>
       <select id="people"></select>
 
-      <p style="font-size:11.5px;color:var(--sub);margin-top:10px">人数による追加料金は下記をご参照ください。</p>
+      <p style="font-size:11.5px;color:var(--sub);margin-top:10px">人数による追加料金は下記をご参照ください（1〜20名様までお選びいただけます）。</p>
       <table class="people-table">
-        <tr><th>サイズ</th><th>追加料金</th><th>最大人数</th></tr>
-        <tr><td>S</td><td class="add">2名様から +3,850円</td><td>3名様</td></tr>
-        <tr><td>M</td><td class="add">3名様から +4,950円</td><td>6名様*</td></tr>
-        <tr><td>L</td><td class="add">5名様から +5,500円</td><td>20名様*</td></tr>
+        <tr><th>サイズ</th><th>追加料金</th></tr>
+        <tr><td>S</td><td class="add">2名様から1名ずつ +3,850円</td></tr>
+        <tr><td>M</td><td class="add">3名様から1名ずつ +4,950円</td></tr>
+        <tr><td>L</td><td class="add">5名様から1名ずつ +5,500円</td></tr>
       </table>
-      <div class="note">*各サイズの最大人数を超える似顔絵をご希望の場合は、お手数ですがお問い合わせ下さい。当店でお見積りをし、返信させて頂きます。</div>
     </div>
 
     <div class="blk">
@@ -318,8 +301,8 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
 
 <script>
 const SIZES = {
-  S: { name:'Sサイズ（2L）', base:10835, threshold:1, maxPeople:3,  perPerson:3850 },
-  M: { name:'Mサイズ（A4）', base:16390, threshold:2, maxPeople:6,  perPerson:4950 },
+  S: { name:'Sサイズ（2L）', base:10835, threshold:1, maxPeople:20, perPerson:3850 },
+  M: { name:'Mサイズ（A4）', base:16390, threshold:2, maxPeople:20, perPerson:4950 },
   L: { name:'Lサイズ（A3）', base:36300, threshold:4, maxPeople:20, perPerson:5500 }
 };
 
