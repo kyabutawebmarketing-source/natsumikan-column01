@@ -107,19 +107,15 @@ a{color:#e07b1a;text-decoration:none}
   margin-bottom:10px;padding-bottom:8px;
   border-bottom:1px solid var(--bd);
 }
-.toc ol{list-style:none;padding:0;counter-reset:t}
+.toc ol{list-style:none;padding:0}
 .toc li{
-  counter-increment:t;
-  padding:5px 0 5px 24px;font-size:13px;
+  padding:5px 0 5px 18px;font-size:13px;
   position:relative;border-bottom:1px dotted var(--bd);
 }
 .toc li:last-child{border-bottom:none}
 .toc li::before{
-  content:counter(t);position:absolute;left:0;top:7px;
-  background:var(--org);color:#fff;
-  font-size:10px;font-weight:700;
-  width:16px;height:16px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
+  content:"›";position:absolute;left:0;top:3px;
+  color:var(--org);font-weight:700;font-size:15px;
 }
 .toc li a{color:#333;font-size:13px}
 .toc li a:hover{color:var(--org)}
@@ -205,6 +201,40 @@ a{color:#e07b1a;text-decoration:none}
 }
 .sp-table tr:nth-child(even) td{background:#fafaf8}
 .sp-table tr:last-child th,.sp-table tr:last-child td{border-bottom:none}
+
+/* ── REASON CAROUSEL ── */
+.carousel-wrap{margin:14px 0}
+.carousel-track{
+  display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:2px 2px 10px;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.carousel-track::-webkit-scrollbar{display:none}
+.reason-card{
+  flex:0 0 82%;scroll-snap-align:start;
+  background:#fff9f3;border:1px solid #f5c880;border-radius:var(--radius);
+  padding:16px 16px 14px;
+}
+.reason-num{
+  width:28px;height:28px;border-radius:50%;background:var(--org);color:#fff;
+  font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  margin-bottom:10px;
+}
+.reason-ttl{font-size:13.5px;font-weight:700;color:var(--org-d);margin-bottom:8px;line-height:1.6}
+.reason-txt{font-size:12.5px;line-height:1.8;color:var(--text)}
+.carousel-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:4px}
+.car-btn{
+  width:32px;height:32px;border-radius:50%;border:1px solid var(--bd);
+  background:#fff;color:var(--org-d);font-size:16px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;
+}
+.car-btn:hover{background:var(--org-l)}
+.car-dots{display:flex;gap:6px}
+.car-dots .dot{width:6px;height:6px;border-radius:50%;background:var(--bd);cursor:pointer;transition:width .2s,border-radius .2s}
+.car-dots .dot.active{background:var(--org);width:16px;border-radius:4px}
+@media(min-width:600px){
+  .reason-card{flex:0 0 46%}
+}
 
 /* ── SIMPLE TABLE (budget / price) ── */
 .plain-wrap{overflow-x:auto;margin:12px 0}
@@ -336,13 +366,6 @@ a{color:#e07b1a;text-decoration:none}
   max-width:320px;box-shadow:0 3px 10px rgba(224,123,26,.35);
 }
 .web-cta:hover{background:var(--org-d);color:#fff}
-
-/* ── DIVIDER ── */
-.div-band{
-  background:var(--org-m);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);
-  padding:10px 16px;margin:28px 0;text-align:center;
-  font-size:12px;color:var(--brn);font-weight:700;
-}
 
 /* ── STICKY CTA ── */
 .sticky-b{
@@ -484,12 +507,13 @@ a{color:#e07b1a;text-decoration:none}
     </div>
   </section>
 
-  <div class="div-band">▼ 敬老の日に人気の贈り物5選</div>
-
-  <!-- GIFTS INTRO -->
-  <div class="lead" id="gifts">
-    ここからは、実際に敬老の日の贈り物として人気の高いジャンルを5つご紹介します。それぞれのメリット・注意点もあわせて解説するので、贈る相手や状況に合わせて参考にしてください。
-  </div>
+  <!-- GIFTS -->
+  <section class="sec" id="gifts">
+    <div class="sec-hd-plain">敬老の日に人気の贈り物5選</div>
+    <div class="sec-body">
+      <p>ここからは、実際に敬老の日の贈り物として人気の高いジャンルを5つご紹介します。それぞれのメリット・注意点もあわせて解説するので、贈る相手や状況に合わせて参考にしてください。</p>
+    </div>
+  </section>
 
   <!-- GIFT 1: 似顔絵 -->
   <section class="sec" id="gift1">
@@ -626,8 +650,6 @@ a{color:#e07b1a;text-decoration:none}
     </div>
   </section>
 
-  <div class="div-band">▼ 5選の中でも似顔絵ギフトが選ばれる理由</div>
-
   <!-- WHY -->
   <section class="sec" id="why">
     <div class="sec-hd-plain">5選の中でも似顔絵ギフトが選ばれる理由</div>
@@ -668,13 +690,40 @@ a{color:#e07b1a;text-decoration:none}
       <p>ここまでのチェックポイントを踏まえたうえで、敬老の日の似顔絵ギフトとしておすすめしたいのが、専門店<strong>「なつみかん」</strong>です。制作実績10万枚以上という豊富な実績を持ち、敬老の日ギフトとしても多くのご家族に選ばれています。</p>
 
       <p class="h3">なつみかんが選ばれる5つの理由</p>
-      <ul class="ck-list">
-        <li><strong>すべて手描き・水彩絵の具による一点物</strong>：写真をもとに、スタッフが一枚一枚水彩絵の具で手描きします。印刷やAI生成ではなく、温かみのある手描きだからこそ「世界に一つだけ」の特別な贈り物になります。絵のタッチも、写実的で幅広い世代に受け入れられやすいタッチと、やわらかく優しい雰囲気のタッチの2種類から、贈る相手の雰囲気に合わせて選択可能です。</li>
-        <li><strong>制作実績10万枚以上の安心感</strong>：これまでの制作実績は10万枚以上。似顔絵専門店としての豊富なノウハウがあるからこそ、初めての注文でも安心して任せられます。</li>
-        <li><strong>全商品、額縁付き・ギフトラッピング済みでお届け</strong>：届いたその日にそのまま渡せるよう、額縁入り・ギフト包装済みの状態で発送。当日バタバタと準備する必要がありません。額縁はナチュラル・ブラウン・ブラックの3色から、お部屋のインテリアに合わせて選べます。</li>
-        <li><strong>人数追加・ペットの同時掲載もOK</strong>：祖父母お二人そろって、家族みんなで、あるいは愛犬・愛猫と一緒に描いてもらうことも可能です（人数追加は有料）。</li>
-        <li><strong>最短翌日発送・お急ぎ対応も無料</strong>：「敬老の日に間に合わない…」という直前の注文でも、9割のご注文でお急ぎ対応が可能。スマートフォンで写真を送るだけで簡単に注文でき、LINEでの注文・相談にも対応しています。</li>
-      </ul>
+      <div class="carousel-wrap">
+        <div class="carousel-track" id="reasonTrack">
+          <div class="reason-card">
+            <div class="reason-num">1</div>
+            <div class="reason-ttl">すべて手描き・水彩絵の具による一点物</div>
+            <p class="reason-txt">写真をもとに、スタッフが一枚一枚水彩絵の具で手描きします。印刷やAI生成ではなく、温かみのある手描きだからこそ「世界に一つだけ」の特別な贈り物になります。絵のタッチも、写実的で幅広い世代に受け入れられやすいタッチと、やわらかく優しい雰囲気のタッチの2種類から、贈る相手の雰囲気に合わせて選択可能です。</p>
+          </div>
+          <div class="reason-card">
+            <div class="reason-num">2</div>
+            <div class="reason-ttl">制作実績10万枚以上の安心感</div>
+            <p class="reason-txt">これまでの制作実績は10万枚以上。似顔絵専門店としての豊富なノウハウがあるからこそ、初めての注文でも安心して任せられます。</p>
+          </div>
+          <div class="reason-card">
+            <div class="reason-num">3</div>
+            <div class="reason-ttl">全商品、額縁付き・ギフトラッピング済みでお届け</div>
+            <p class="reason-txt">届いたその日にそのまま渡せるよう、額縁入り・ギフト包装済みの状態で発送。当日バタバタと準備する必要がありません。額縁はナチュラル・ブラウン・ブラックの3色から、お部屋のインテリアに合わせて選べます。</p>
+          </div>
+          <div class="reason-card">
+            <div class="reason-num">4</div>
+            <div class="reason-ttl">人数追加・ペットの同時掲載もOK</div>
+            <p class="reason-txt">祖父母お二人そろって、家族みんなで、あるいは愛犬・愛猫と一緒に描いてもらうことも可能です（人数追加は有料）。</p>
+          </div>
+          <div class="reason-card">
+            <div class="reason-num">5</div>
+            <div class="reason-ttl">最短翌日発送・お急ぎ対応も無料</div>
+            <p class="reason-txt">「敬老の日に間に合わない…」という直前の注文でも、9割のご注文でお急ぎ対応が可能。スマートフォンで写真を送るだけで簡単に注文でき、LINEでの注文・相談にも対応しています。</p>
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button type="button" class="car-btn" id="carPrev" aria-label="前の理由へ">‹</button>
+          <div class="car-dots" id="carDots"></div>
+          <button type="button" class="car-btn" id="carNext" aria-label="次の理由へ">›</button>
+        </div>
+      </div>
 
       <p class="h3">料金の目安（税込）</p>
       <div class="plain-wrap">
@@ -811,6 +860,50 @@ if(sb){
     sb.style.display=(y>500&&y<dh-300)?"block":"none";
   });
 }
+
+(function(){
+  const track = document.getElementById("reasonTrack");
+  if(!track) return;
+  const cards = Array.from(track.children);
+  const dotsWrap = document.getElementById("carDots");
+  const prevBtn = document.getElementById("carPrev");
+  const nextBtn = document.getElementById("carNext");
+  cards.forEach((_,i)=>{
+    const d=document.createElement("span");
+    d.className="dot"+(i===0?" active":"");
+    d.addEventListener("click",()=>{
+      cards[i].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
+    });
+    dotsWrap.appendChild(d);
+  });
+  const dots = Array.from(dotsWrap.children);
+  function activeIndex(){
+    const trackLeft = track.getBoundingClientRect().left;
+    let idx=0, min=Infinity;
+    cards.forEach((c,i)=>{
+      const d=Math.abs(c.getBoundingClientRect().left - trackLeft);
+      if(d<min){min=d;idx=i;}
+    });
+    return idx;
+  }
+  function updateDots(){
+    const idx=activeIndex();
+    dots.forEach((d,i)=>d.classList.toggle("active",i===idx));
+  }
+  let scrollTimer;
+  track.addEventListener("scroll",()=>{
+    clearTimeout(scrollTimer);
+    scrollTimer=setTimeout(updateDots,80);
+  });
+  prevBtn.addEventListener("click",()=>{
+    const idx=Math.max(0,activeIndex()-1);
+    cards[idx].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
+  });
+  nextBtn.addEventListener("click",()=>{
+    const idx=Math.min(cards.length-1,activeIndex()+1);
+    cards[idx].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
+  });
+})();
 </script>
 </body>
 </html>
