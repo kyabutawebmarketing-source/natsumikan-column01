@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>似顔絵料金シミュレーター｜手描き似顔絵なつみかん</title>
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="タッチ・サイズ・人数・オプションを選ぶだけで、手描き似顔絵の税込料金がその場でわかる料金シミュレーターです。">
+<meta name="description" content="タッチ・サイズ・人数を選ぶだけで、手描き似顔絵の税込料金がその場でわかる料金シミュレーターです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
@@ -96,13 +96,6 @@ select{
 .radio-item{display:flex;align-items:center;gap:6px;font-size:13.5px}
 .radio-item input{width:16px;height:16px;accent-color:var(--org)}
 
-.chk-row{display:flex;align-items:flex-start;gap:8px;cursor:pointer}
-.chk-row input{width:18px;height:18px;margin-top:2px;accent-color:var(--org);flex-shrink:0}
-.chk-row .nm{font-weight:700;font-size:13.5px}
-.chk-row .pr{color:#d1391f;font-weight:700;font-size:13px;margin-left:4px}
-.desc{font-size:11.5px;color:var(--sub);margin-top:6px;line-height:1.7}
-.sub-select{margin-top:10px}
-
 /* ── STICKY TOTAL BAR ── */
 .totalbar{
   position:fixed;left:0;right:0;bottom:0;z-index:300;
@@ -137,7 +130,7 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
 
 <div class="hero">
   <h1>似顔絵料金シミュレーター</h1>
-  <p>タッチ・サイズ・人数・オプションを選ぶだけで、税込価格がすぐわかります</p>
+  <p>タッチ・サイズ・人数を選ぶだけで、税込価格がすぐわかります</p>
 </div>
 
 <div class="wrap">
@@ -175,7 +168,7 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
         <input type="radio" name="size" value="S" checked>
         <div class="info">
           <div class="nm">Sサイズ <span style="font-weight:400">2L（17.8cm×12.7cm）</span></div>
-          <div class="pr">9,850円 <small>（税込 10,835円）</small></div>
+          <div class="pr">9,850円 <small>（税込 10,835円〜）</small></div>
         </div>
         <span class="badge b1">最安値</span>
       </label>
@@ -184,7 +177,7 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
         <input type="radio" name="size" value="M">
         <div class="info">
           <div class="nm">Mサイズ <span style="font-weight:400">A4（29.7cm×21.0cm）</span></div>
-          <div class="pr">14,900円 <small>（税込 16,390円）</small></div>
+          <div class="pr">14,900円 <small>（税込 16,390円〜）</small></div>
         </div>
         <span class="badge b2">人気NO.1</span>
       </label>
@@ -193,7 +186,7 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
         <input type="radio" name="size" value="L">
         <div class="info">
           <div class="nm">Lサイズ <span style="font-weight:400">A3（42.0cm×29.7cm）</span></div>
-          <div class="pr">33,000円 <small>（税込 36,300円）</small></div>
+          <div class="pr">33,000円 <small>（税込 36,300円〜）</small></div>
         </div>
         <span class="badge b3">コスパ◎</span>
       </label>
@@ -221,55 +214,6 @@ footer{text-align:center;font-size:11px;color:#999;padding:20px 0}
       <div class="radio-row">
         <label class="radio-item"><input type="radio" name="wrap" value="1"> 希望する（手数料550円）</label>
         <label class="radio-item"><input type="radio" name="wrap" value="0" checked> 希望しない</label>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ STEP 3 ============ -->
-  <div class="card">
-    <div class="card-hd">オプション</div>
-
-    <div class="blk">
-      <label class="chk-row">
-        <input type="checkbox" id="data">
-        <div>
-          <span class="nm">データ納品を希望する</span><span class="pr">(3,300円)</span>
-          <div class="desc">LINEやTwitterのアイコン・スマホの待受画面・SNSにアップなど、様々なご用途で使用できるオプションです。またコンビニプリントなどで、お祝いの席の皆様にお配りする事も可能です。<br>※著作権フリー：権利ごと譲渡致しますのでご自由にお使いいただけます。<br>※高解像度＆高画質でポスター印刷も可能。</div>
-        </div>
-      </label>
-    </div>
-
-    <div class="blk">
-      <label class="chk-row">
-        <input type="checkbox" id="chanchanko">
-        <div>
-          <span class="nm">ちゃんちゃんこセットを希望する</span><span class="pr">(1枚 5,478円〜)</span>
-        </div>
-      </label>
-      <div class="sub-select">
-        <select id="chanchankoColor" disabled>
-          <option value="">ご希望の方は色を選択</option>
-          <option value="赤(還暦)">赤(還暦)</option>
-          <option value="黄色(米寿)">黄色(米寿)</option>
-          <option value="紫(古希・喜寿・傘寿・卒寿)">紫(古希・喜寿・傘寿・卒寿)</option>
-        </select>
-      </div>
-      <div class="desc">【セット内容】●ちゃんちゃんこ ●頭巾 ●豪華化粧箱 ●書道作家直筆扇子 ●当店オリジナル生まれた年の出来事年表</div>
-    </div>
-
-    <div class="blk">
-      <label class="chk-row">
-        <input type="checkbox" id="namepoem">
-        <div>
-          <span class="nm">ネームポエムを希望する</span><span class="pr">(1枚 7,480円〜)</span>
-        </div>
-      </label>
-      <div class="sub-select">
-        <select id="namepoemPeople" disabled>
-          <option value="">ご希望の方は人数を選択</option>
-          <option value="7480">1人（￥7,480）</option>
-          <option value="10780">2人（￥10,780）</option>
-        </select>
       </div>
     </div>
   </div>
@@ -344,33 +288,18 @@ function calc(){
 
   const wrap = Number(document.querySelector('input[name="wrap"]:checked').value) ? 550 : 0;
 
-  const dataOn = document.getElementById('data').checked;
-  const dataFee = dataOn ? 3300 : 0;
-
-  const chanchankoOn = document.getElementById('chanchanko').checked;
-  const chanchankoFee = chanchankoOn ? 5478 : 0;
-  document.getElementById('chanchankoColor').disabled = !chanchankoOn;
-
-  const namepoemOn = document.getElementById('namepoem').checked;
-  const npSel = document.getElementById('namepoemPeople');
-  npSel.disabled = !namepoemOn;
-  const namepoemFee = namepoemOn ? Number(npSel.value || 0) : 0;
-
-  const total = cfg.base + extraPeople + wrap + dataFee + chanchankoFee + namepoemFee;
+  const total = cfg.base + extraPeople + wrap;
 
   const rows = [];
   rows.push([`${cfg.name}（1名様分）`, cfg.base]);
   if(extraPeople > 0) rows.push([`人数追加（${people}名様）`, extraPeople]);
   if(wrap > 0) rows.push(['ラッピング手数料', wrap]);
-  if(dataFee > 0) rows.push(['データ納品', dataFee]);
-  if(chanchankoFee > 0) rows.push(['ちゃんちゃんこセット', chanchankoFee]);
-  if(namepoemFee > 0) rows.push([`ネームポエム（${npSel.options[npSel.selectedIndex].text.split('（')[0]}）`, namepoemFee]);
 
   const brk = document.getElementById('brk');
   brk.innerHTML = rows.map(r=>`<div class="brk-row"><span>${r[0]}</span><span class="v">${yen(r[1])}</span></div>`).join('')
-    + `<div class="brk-row sum"><span>合計金額（税込）</span><span class="v">${yen(total)}</span></div>`;
+    + `<div class="brk-row sum"><span>合計金額（税込）</span><span class="v">${yen(total)}〜</span></div>`;
 
-  document.getElementById('total').innerHTML = yen(total);
+  document.getElementById('total').innerHTML = yen(total) + '〜';
 }
 
 document.querySelectorAll('input[name="size"]').forEach(r=>{
@@ -384,9 +313,6 @@ document.querySelectorAll('.size-opt').forEach(el=>{
 });
 ['people'].forEach(id=>document.getElementById(id).addEventListener('change', calc));
 document.querySelectorAll('input[name="wrap"]').forEach(r=>r.addEventListener('change', calc));
-['data','chanchanko','namepoem'].forEach(id=>document.getElementById(id).addEventListener('change', calc));
-document.getElementById('chanchankoColor').addEventListener('change', calc);
-document.getElementById('namepoemPeople').addEventListener('change', calc);
 
 populatePeople();
 calc();
