@@ -122,33 +122,24 @@ a{color:#e07b1a;text-decoration:none}
 
 /* ── SECTION (h2) ── */
 .sec{margin-bottom:36px}
-.sec-hd{
-  display:flex;align-items:center;gap:10px;
-  background:var(--org-m);
-  border-left:4px solid var(--org);
-  padding:12px 14px;
-  margin-bottom:0;
-  border-radius:0 var(--radius) 0 0;
-}
-.sec-hd .sec-num{
-  background:var(--org);color:#fff;
-  font-size:10px;font-weight:700;
-  min-width:52px;height:52px;border-radius:50%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  line-height:1.35;flex-shrink:0;gap:0;
-  text-align:center;
-}
-.sec-hd .sec-num .num-label{font-size:9px;font-weight:400;opacity:.85;line-height:1.2}
-.sec-hd .sec-num .num-n{font-size:20px;font-weight:700;line-height:1}
-.sec-hd h2{
-  font-size:15px;font-weight:700;color:#222;
-  line-height:1.5;margin:0;
-}
 .sec-body{
   border:1px solid var(--bd);border-top:none;
   border-radius:0 0 var(--radius) var(--radius);
   padding:18px 16px;background:#fff;
 }
+
+/* ── GIFT ITEM (within one continuous card) ── */
+.gift-item{padding:18px 0;border-bottom:1px dashed var(--bd)}
+.gift-item:first-of-type{padding-top:6px}
+.gift-item:last-child{border-bottom:none;padding-bottom:2px}
+.gift-hd{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.gift-num{
+  background:var(--org);color:#fff;
+  font-size:13px;font-weight:700;
+  width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.gift-hd h3{font-size:14px;font-weight:700;color:#222;line-height:1.5;margin:0}
 
 /* H2 without number */
 .sec-hd-plain{
@@ -560,139 +551,109 @@ a{color:#e07b1a;text-decoration:none}
     <div class="sec-hd-plain">敬老の日に人気の贈り物5選</div>
     <div class="sec-body">
       <p>ここからは、実際に敬老の日の贈り物として人気の高いジャンルを5つご紹介します。それぞれのメリット・注意点もあわせて解説するので、贈る相手や状況に合わせて参考にしてください。</p>
-    </div>
-  </section>
 
-  <!-- GIFT 1: 似顔絵 -->
-  <section class="sec" id="gift1">
-    <div class="sec-hd">
-      <div class="sec-num"><span class="num-label">その</span><span class="num-n">1</span></div>
-      <h2>似顔絵ギフト<br>形に残り、気持ちがまっすぐ伝わる</h2>
-    </div>
-    <div class="sec-body">
-      <p>近年、敬老の日の贈り物として支持を集めているのが「似顔絵ギフト」です。写真をもとに孫や家族の顔を手描きし、額に入れて贈るスタイルで、贈られた側が部屋に飾って毎日眺められるのが最大の特徴です。</p>
-      <div class="okng">
-        <div class="ok-box">
-          <div class="okng-ttl">○ メリット</div>
-          <ul class="ok-list">
-            <li>消えものではなく、ずっと家に飾っておける</li>
-            <li>遠方に住んでいて会えない孫や家族の顔を、いつでも感じられる</li>
-            <li>メッセージを添えられるので「手紙」の役割も果たす</li>
-            <li>長寿祝い（還暦・喜寿・米寿など）との相性が良く、衣装を指定して記念品にもできる</li>
-          </ul>
+      <div class="gift-item" id="gift1">
+        <div class="gift-hd"><span class="gift-num">1</span><h3>似顔絵ギフト｜形に残り、気持ちがまっすぐ伝わる</h3></div>
+        <p>近年、敬老の日の贈り物として支持を集めているのが「似顔絵ギフト」です。写真をもとに孫や家族の顔を手描きし、額に入れて贈るスタイルで、贈られた側が部屋に飾って毎日眺められるのが最大の特徴です。</p>
+        <div class="okng">
+          <div class="ok-box">
+            <div class="okng-ttl">○ メリット</div>
+            <ul class="ok-list">
+              <li>消えものではなく、ずっと家に飾っておける</li>
+              <li>遠方に住んでいて会えない孫や家族の顔を、いつでも感じられる</li>
+              <li>メッセージを添えられるので「手紙」の役割も果たす</li>
+              <li>長寿祝い（還暦・喜寿・米寿など）との相性が良く、衣装を指定して記念品にもできる</li>
+            </ul>
+          </div>
+          <div class="ng-box">
+            <div class="okng-ttl">△ 注意点</div>
+            <ul class="ng-list">
+              <li>手描きのため一定の制作期間が必要（早めの注文が安心）</li>
+              <li>元になる写真の質で仕上がりが変わるため、正面がはっきり写った笑顔の写真を用意したい</li>
+            </ul>
+          </div>
         </div>
-        <div class="ng-box">
-          <div class="okng-ttl">△ 注意点</div>
-          <ul class="ng-list">
-            <li>手描きのため一定の制作期間が必要（早めの注文が安心）</li>
-            <li>元になる写真の質で仕上がりが変わるため、正面がはっきり写った笑顔の写真を用意したい</li>
-          </ul>
+        <p>「もらって困らない」「形に残る」「気持ちが伝わる」という3拍子がそろっていることから、他のジャンルと比べても満足度の高さで選ばれる傾向にあります。似顔絵ギフトの詳しい選び方とおすすめ専門店については、後半で詳しくご紹介します。</p>
+      </div>
+
+      <div class="gift-item" id="gift2">
+        <div class="gift-hd"><span class="gift-num">2</span><h3>花・アレンジメント｜華やかさと季節感を贈る</h3></div>
+        <p>プリザーブドフラワーやフラワーアレンジメントは、敬老の日の定番ギフトです。色鮮やかで見た目にも喜ばれやすく、贈りやすさは随一です。</p>
+        <div class="okng">
+          <div class="ok-box">
+            <div class="okng-ttl">○ メリット</div>
+            <ul class="ok-list">
+              <li>華やかで季節感がある</li>
+              <li>ラッピングされてそのまま渡せる</li>
+            </ul>
+          </div>
+          <div class="ng-box">
+            <div class="okng-ttl">△ 注意点</div>
+            <ul class="ng-list">
+              <li>生花は数日〜数週間で枯れてしまう（長く楽しみたい場合はプリザーブドフラワーがおすすめ）</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <p>「もらって困らない」「形に残る」「気持ちが伝わる」という3拍子がそろっていることから、他のジャンルと比べても満足度の高さで選ばれる傾向にあります。似顔絵ギフトの詳しい選び方とおすすめ専門店については、後半で詳しくご紹介します。</p>
-    </div>
-  </section>
 
-  <!-- GIFT 2: 花 -->
-  <section class="sec" id="gift2">
-    <div class="sec-hd">
-      <div class="sec-num"><span class="num-label">その</span><span class="num-n">2</span></div>
-      <h2>花・アレンジメント<br>華やかさと季節感を贈る</h2>
-    </div>
-    <div class="sec-body">
-      <p>プリザーブドフラワーやフラワーアレンジメントは、敬老の日の定番ギフトです。色鮮やかで見た目にも喜ばれやすく、贈りやすさは随一です。</p>
-      <div class="okng">
-        <div class="ok-box">
-          <div class="okng-ttl">○ メリット</div>
-          <ul class="ok-list">
-            <li>華やかで季節感がある</li>
-            <li>ラッピングされてそのまま渡せる</li>
-          </ul>
-        </div>
-        <div class="ng-box">
-          <div class="okng-ttl">△ 注意点</div>
-          <ul class="ng-list">
-            <li>生花は数日〜数週間で枯れてしまう（長く楽しみたい場合はプリザーブドフラワーがおすすめ）</li>
-          </ul>
+      <div class="gift-item" id="gift3">
+        <div class="gift-hd"><span class="gift-num">3</span><h3>グルメ・スイーツ｜好みに合わせて選べる定番</h3></div>
+        <p>和菓子、フルーツ、名店のスイーツなど、味覚で楽しんでもらえるギフトも人気です。</p>
+        <div class="okng">
+          <div class="ok-box">
+            <div class="okng-ttl">○ メリット</div>
+            <ul class="ok-list">
+              <li>誰にでも贈りやすく、失敗しにくい</li>
+            </ul>
+          </div>
+          <div class="ng-box">
+            <div class="okng-ttl">△ 注意点</div>
+            <ul class="ng-list">
+              <li>好みや健康状態（塩分・糖分制限など）に配慮が必要</li>
+              <li>消えものなので形として残らない</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- GIFT 3: グルメ -->
-  <section class="sec" id="gift3">
-    <div class="sec-hd">
-      <div class="sec-num"><span class="num-label">その</span><span class="num-n">3</span></div>
-      <h2>グルメ・スイーツ<br>好みに合わせて選べる定番</h2>
-    </div>
-    <div class="sec-body">
-      <p>和菓子、フルーツ、名店のスイーツなど、味覚で楽しんでもらえるギフトも人気です。</p>
-      <div class="okng">
-        <div class="ok-box">
-          <div class="okng-ttl">○ メリット</div>
-          <ul class="ok-list">
-            <li>誰にでも贈りやすく、失敗しにくい</li>
-          </ul>
-        </div>
-        <div class="ng-box">
-          <div class="okng-ttl">△ 注意点</div>
-          <ul class="ng-list">
-            <li>好みや健康状態（塩分・糖分制限など）に配慮が必要</li>
-            <li>消えものなので形として残らない</li>
-          </ul>
+      <div class="gift-item" id="gift4">
+        <div class="gift-hd"><span class="gift-num">4</span><h3>旅行・食事券｜一緒に過ごす時間を贈る</h3></div>
+        <p>旅行券や食事券、温泉旅館の宿泊券など「体験」を贈るスタイルも根強い人気があります。</p>
+        <div class="okng">
+          <div class="ok-box">
+            <div class="okng-ttl">○ メリット</div>
+            <ul class="ok-list">
+              <li>一緒に過ごす時間そのものを贈れる</li>
+              <li>思い出に残る</li>
+            </ul>
+          </div>
+          <div class="ng-box">
+            <div class="okng-ttl">△ 注意点</div>
+            <ul class="ng-list">
+              <li>体調やスケジュール調整が必要</li>
+              <li>すぐに使えない場合もある</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- GIFT 4: 旅行 -->
-  <section class="sec" id="gift4">
-    <div class="sec-hd">
-      <div class="sec-num"><span class="num-label">その</span><span class="num-n">4</span></div>
-      <h2>旅行・食事券<br>一緒に過ごす時間を贈る</h2>
-    </div>
-    <div class="sec-body">
-      <p>旅行券や食事券、温泉旅館の宿泊券など「体験」を贈るスタイルも根強い人気があります。</p>
-      <div class="okng">
-        <div class="ok-box">
-          <div class="okng-ttl">○ メリット</div>
-          <ul class="ok-list">
-            <li>一緒に過ごす時間そのものを贈れる</li>
-            <li>思い出に残る</li>
-          </ul>
-        </div>
-        <div class="ng-box">
-          <div class="okng-ttl">△ 注意点</div>
-          <ul class="ng-list">
-            <li>体調やスケジュール調整が必要</li>
-            <li>すぐに使えない場合もある</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GIFT 5: 実用ギフト -->
-  <section class="sec" id="gift5">
-    <div class="sec-hd">
-      <div class="sec-num"><span class="num-label">その</span><span class="num-n">5</span></div>
-      <h2>名入れ・実用ギフト<br>長く使ってもらえる贈り物</h2>
-    </div>
-    <div class="sec-body">
-      <p>湯呑み、座布団、名入れのタンブラーなど、日常で長く使えるアイテムも定番です。</p>
-      <div class="okng">
-        <div class="ok-box">
-          <div class="okng-ttl">○ メリット</div>
-          <ul class="ok-list">
-            <li>実用的で長く使ってもらえる</li>
-          </ul>
-        </div>
-        <div class="ng-box">
-          <div class="okng-ttl">△ 注意点</div>
-          <ul class="ng-list">
-            <li>好みが分かれやすい</li>
-            <li>「気を遣わせた」と受け取られることもある</li>
-          </ul>
+      <div class="gift-item" id="gift5">
+        <div class="gift-hd"><span class="gift-num">5</span><h3>名入れ・実用ギフト｜長く使ってもらえる贈り物</h3></div>
+        <p>湯呑み、座布団、名入れのタンブラーなど、日常で長く使えるアイテムも定番です。</p>
+        <div class="okng">
+          <div class="ok-box">
+            <div class="okng-ttl">○ メリット</div>
+            <ul class="ok-list">
+              <li>実用的で長く使ってもらえる</li>
+            </ul>
+          </div>
+          <div class="ng-box">
+            <div class="okng-ttl">△ 注意点</div>
+            <ul class="ng-list">
+              <li>好みが分かれやすい</li>
+              <li>「気を遣わせた」と受け取られることもある</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -773,7 +734,7 @@ a{color:#e07b1a;text-decoration:none}
         </div>
       </div>
 
-      <p class="h3">料金シミュレーター</p>
+      <p class="h3">似顔絵なつみかんカンタン料金シミュレーション</p>
       <p>タッチ・サイズ・人数を選ぶだけで、税込価格がその場でわかります。気になる組み合わせをチェックしてみてください。</p>
 
       <div class="sim-widget" id="priceSim">
