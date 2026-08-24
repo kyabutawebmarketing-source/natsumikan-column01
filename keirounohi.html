@@ -236,6 +236,54 @@ a{color:#e07b1a;text-decoration:none}
   .reason-card{flex:0 0 46%}
 }
 
+/* ── PRICE SIMULATOR WIDGET ── */
+#priceSim{margin:14px 0}
+#priceSim .sim-card{background:#fff;border-radius:var(--radius);margin-bottom:14px;overflow:hidden;border:1px solid var(--bd)}
+#priceSim .sim-card-hd{background:var(--org);color:#fff;font-weight:700;font-size:13.5px;padding:10px 14px}
+#priceSim .sim-blk{padding:14px}
+#priceSim .sim-blk + .sim-blk{border-top:1px solid #f0e8dc}
+#priceSim .sim-blk-hd{
+  background:var(--org-l);border:1px solid var(--bd);border-radius:4px;
+  padding:8px 12px;display:flex;align-items:center;justify-content:space-between;
+  font-size:12.5px;font-weight:700;color:var(--brn);margin-bottom:10px;
+}
+#priceSim .sim-req{background:#e2483d;color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;flex-shrink:0}
+#priceSim select{
+  width:100%;padding:11px 12px;font-size:13.5px;border:1px solid #444;border-radius:4px;
+  background:#fff;font-family:inherit;color:#333;appearance:none;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3e%3cpath fill='%23e07b1a' d='M0 0l6 8 6-8z'/%3e%3c/svg%3e");
+  background-repeat:no-repeat;background-position:right 14px center;background-size:11px;
+}
+#priceSim .sim-note{font-size:11px;color:var(--sub);margin-top:10px;line-height:1.7}
+#priceSim .sim-size-opt{
+  border:2px solid var(--bd);border-radius:6px;padding:12px 14px;margin-bottom:10px;
+  display:flex;align-items:center;gap:12px;cursor:pointer;position:relative;background:#fff;
+}
+#priceSim .sim-size-opt input{width:18px;height:18px;accent-color:var(--org);flex-shrink:0}
+#priceSim .sim-size-opt.sim-sel{border-color:var(--org);background:#fffbea}
+#priceSim .sim-info{flex:1}
+#priceSim .sim-info .sim-nm{font-weight:700;font-size:13.5px}
+#priceSim .sim-info .sim-pr{color:#d1391f;font-weight:700;font-size:13.5px;margin-top:2px}
+#priceSim .sim-info .sim-pr small{font-size:11px;font-weight:400;color:var(--sub)}
+#priceSim .sim-badge{position:absolute;top:-9px;right:10px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;color:#fff}
+#priceSim .sim-badge.sim-b1{background:var(--org)}
+#priceSim .sim-badge.sim-b2{background:#e88ba0}
+#priceSim .sim-badge.sim-b3{background:#8bc34a}
+#priceSim .sim-people-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+#priceSim .sim-people-table th,#priceSim .sim-people-table td{border:1px solid var(--bd);padding:6px 4px;text-align:center}
+#priceSim .sim-people-table th{background:var(--org-l);color:var(--brn)}
+#priceSim .sim-people-table td.sim-add{color:#d1391f;font-weight:700}
+#priceSim .sim-radio-row{display:flex;gap:14px;flex-wrap:wrap}
+#priceSim .sim-radio-item{display:flex;align-items:center;gap:6px;font-size:13px}
+#priceSim .sim-radio-item input{width:16px;height:16px;accent-color:var(--org)}
+#priceSim .sim-breakdown{background:var(--org-l);border:1px solid var(--bd);border-radius:6px;padding:12px 14px}
+#priceSim .sim-breakdown h3{font-size:13px;color:var(--brn);margin-bottom:8px}
+#priceSim .sim-brk-row{display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px dashed var(--bd)}
+#priceSim .sim-brk-row:last-child{border-bottom:none}
+#priceSim .sim-brk-row .v{font-weight:700}
+#priceSim .sim-brk-row.sim-sum{border-top:2px solid var(--org);margin-top:4px;padding-top:8px;font-weight:700;font-size:14px}
+#priceSim .sim-brk-row.sim-sum .v{color:#d1391f;font-size:18px}
+
 /* ── SIMPLE TABLE (budget / price) ── */
 .plain-wrap{overflow-x:auto;margin:12px 0}
 .plain-table{width:100%;border-collapse:collapse;font-size:13px;min-width:420px}
@@ -725,20 +773,99 @@ a{color:#e07b1a;text-decoration:none}
         </div>
       </div>
 
-      <p class="h3">料金の目安（税込）</p>
-      <div class="plain-wrap">
-        <table class="plain-table">
-          <thead>
-            <tr><th>サイズ</th><th>基本人数</th><th>料金（税込）</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>S（小）</td><td>1名様まで</td><td>10,835円</td></tr>
-            <tr><td>M（標準）</td><td>2名様まで／送料無料</td><td>16,390円</td></tr>
-            <tr><td>L（大）</td><td>4名様まで／送料無料</td><td>36,300円</td></tr>
-          </tbody>
-        </table>
+      <p class="h3">料金シミュレーター</p>
+      <p>タッチ・サイズ・人数を選ぶだけで、税込価格がその場でわかります。気になる組み合わせをチェックしてみてください。</p>
+
+      <div class="sim-widget" id="priceSim">
+        <div class="sim-card">
+          <div class="sim-card-hd">タッチ・サイズ</div>
+          <div class="sim-blk">
+            <div class="sim-blk-hd">似顔絵の用途を選択ください<span class="sim-req">必須</span></div>
+            <select id="simPurpose">
+              <option selected>敬老の日のお祝いに</option>
+              <option>長寿のお祝いに</option>
+              <option>結婚記念日に</option>
+              <option>誕生日のお祝いに</option>
+              <option>カップル記念日</option>
+              <option>退職・定年祝い</option>
+              <option>ペットの似顔絵</option>
+              <option>ご家族の似顔絵</option>
+              <option>卒業、入学祝い</option>
+              <option>引っ越し祝い</option>
+              <option>出産祝い</option>
+              <option>開店祝い(お店の〇周年)</option>
+              <option>優勝景品(〇〇大会など)</option>
+              <option>Instagram、YouTube等、SNSアイコン</option>
+              <option>ウェルカム、サンクスボード</option>
+              <option>クリスマスプレゼントに</option>
+              <option>その他</option>
+            </select>
+            <div class="sim-note">※用途の選択は料金に影響しません（ご参考情報です）</div>
+          </div>
+
+          <div class="sim-blk">
+            <div class="sim-blk-hd">似顔絵サイズを選択ください<span class="sim-req">必須</span></div>
+
+            <label class="sim-size-opt sim-sel" data-size="S">
+              <input type="radio" name="simSize" value="S" checked>
+              <div class="sim-info">
+                <div class="sim-nm">Sサイズ <span style="font-weight:400">2L（17.8cm×12.7cm）</span></div>
+                <div class="sim-pr">9,850円 <small>（税込 10,835円〜）</small></div>
+              </div>
+              <span class="sim-badge sim-b1">最安値</span>
+            </label>
+
+            <label class="sim-size-opt" data-size="M">
+              <input type="radio" name="simSize" value="M">
+              <div class="sim-info">
+                <div class="sim-nm">Mサイズ <span style="font-weight:400">A4（29.7cm×21.0cm）</span></div>
+                <div class="sim-pr">14,900円 <small>（税込 16,390円〜）</small></div>
+              </div>
+              <span class="sim-badge sim-b2">人気NO.1</span>
+            </label>
+
+            <label class="sim-size-opt" data-size="L">
+              <input type="radio" name="simSize" value="L">
+              <div class="sim-info">
+                <div class="sim-nm">Lサイズ <span style="font-weight:400">A3（42.0cm×29.7cm）</span></div>
+                <div class="sim-pr">33,000円 <small>（税込 36,300円〜）</small></div>
+              </div>
+              <span class="sim-badge sim-b3">コスパ◎</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="sim-card">
+          <div class="sim-card-hd">額縁・人数</div>
+          <div class="sim-blk">
+            <div class="sim-blk-hd">似顔絵の人数を選択ください<span class="sim-req">必須</span></div>
+            <select id="simPeople"></select>
+
+            <p style="font-size:11.5px;color:var(--sub);margin-top:10px">人数による追加料金・選択可能人数は下記をご参照ください。</p>
+            <table class="sim-people-table">
+              <tr><th>サイズ</th><th>追加料金</th><th>最大人数</th></tr>
+              <tr><td>S</td><td class="sim-add">2名様から1名ずつ +3,850円</td><td>3名様</td></tr>
+              <tr><td>M</td><td class="sim-add">3名様から1名ずつ +4,950円</td><td>6名様</td></tr>
+              <tr><td>L</td><td class="sim-add">5名様から1名ずつ +5,500円</td><td>20名様</td></tr>
+            </table>
+          </div>
+
+          <div class="sim-blk">
+            <div class="sim-blk-hd">ラッピングを希望する<span class="sim-req">必須</span></div>
+            <div class="sim-radio-row">
+              <label class="sim-radio-item"><input type="radio" name="simWrap" value="1"> 希望する（手数料550円）</label>
+              <label class="sim-radio-item"><input type="radio" name="simWrap" value="0" checked> 希望しない</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-breakdown">
+          <h3>お見積り内訳（税込）</h3>
+          <div id="simBrk"></div>
+        </div>
       </div>
-      <p style="font-size:12px;color:var(--sub)">※Mサイズ以上は送料無料。人数追加の場合は1名につき追加料金が発生します（サイズごとに料金が異なります）。</p>
+
+      <p style="font-size:12px;color:var(--sub)">※本シミュレーターの金額は概算です。ご注文内容の詳細やキャンペーン適用状況により実際の金額と異なる場合があります。表示価格はすべて消費税10%込みです。</p>
       <p>似顔絵に添えるメッセージは自由に指定でき、衣装（服装）の希望も注文時に伝えることができます。</p>
 
       <a href="https://www.natsumikan.shop/p_keirou.html" target="_blank" class="web-cta">▶ 敬老の日の似顔絵ギフトを見る</a>
@@ -903,6 +1030,71 @@ if(sb){
     const idx=Math.min(cards.length-1,activeIndex()+1);
     cards[idx].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
   });
+})();
+
+(function(){
+  const SIZES = {
+    S:{ name:'Sサイズ（2L）', base:10835, threshold:1, maxPeople:3,  perPerson:3850 },
+    M:{ name:'Mサイズ（A4）', base:16390, threshold:2, maxPeople:6,  perPerson:4950 },
+    L:{ name:'Lサイズ（A3）', base:36300, threshold:4, maxPeople:20, perPerson:5500 }
+  };
+  const sim = document.getElementById("priceSim");
+  if(!sim) return;
+  const yen = n => "￥" + n.toLocaleString("ja-JP");
+
+  function currentSize(){
+    return sim.querySelector('input[name="simSize"]:checked').value;
+  }
+  function populatePeople(){
+    const cfg = SIZES[currentSize()];
+    const sel = sim.querySelector("#simPeople");
+    const prevVal = sel.value;
+    sel.innerHTML = "";
+    for(let i=1;i<=cfg.maxPeople;i++){
+      const extra = Math.max(0, i - cfg.threshold) * cfg.perPerson;
+      const opt = document.createElement("option");
+      opt.value = i;
+      opt.textContent = extra > 0 ? `${i}名様（追加 +${extra.toLocaleString("ja-JP")}円）` : `${i}名様`;
+      sel.appendChild(opt);
+    }
+    if(prevVal && Number(prevVal) <= cfg.maxPeople){ sel.value = prevVal; }
+  }
+  function updateSizeSelection(){
+    sim.querySelectorAll(".sim-size-opt").forEach(el=>{
+      el.classList.toggle("sim-sel", el.dataset.size === currentSize());
+    });
+  }
+  function calc(){
+    const cfg = SIZES[currentSize()];
+    const people = Number(sim.querySelector("#simPeople").value || 1);
+    const extraPeople = Math.max(0, people - cfg.threshold) * cfg.perPerson;
+    const wrap = Number(sim.querySelector('input[name="simWrap"]:checked').value) ? 550 : 0;
+    const total = cfg.base + extraPeople + wrap;
+
+    const rows = [];
+    rows.push([`${cfg.name}（1名様分）`, cfg.base]);
+    if(extraPeople > 0) rows.push([`人数追加（${people}名様）`, extraPeople]);
+    if(wrap > 0) rows.push(["ラッピング手数料", wrap]);
+
+    const brk = sim.querySelector("#simBrk");
+    brk.innerHTML = rows.map(r=>`<div class="sim-brk-row"><span>${r[0]}</span><span class="v">${yen(r[1])}</span></div>`).join("")
+      + `<div class="sim-brk-row sim-sum"><span>合計金額（税込）</span><span class="v">${yen(total)}〜</span></div>`;
+  }
+
+  sim.querySelectorAll('input[name="simSize"]').forEach(r=>{
+    r.addEventListener("change", ()=>{ updateSizeSelection(); populatePeople(); calc(); });
+  });
+  sim.querySelectorAll(".sim-size-opt").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      el.querySelector('input[name="simSize"]').checked = true;
+      updateSizeSelection(); populatePeople(); calc();
+    });
+  });
+  sim.querySelector("#simPeople").addEventListener("change", calc);
+  sim.querySelectorAll('input[name="simWrap"]').forEach(r=>r.addEventListener("change", calc));
+
+  populatePeople();
+  calc();
 })();
 </script>
 </body>
