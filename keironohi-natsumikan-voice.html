@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特別な贈り物なら似顔絵なつみかん～お客様の声をご紹介｜抜粋</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:#333;background:#fff;line-height:1.85}
+h2,h3{word-break:keep-all}
+img{max-width:100%;height:auto;display:block}
+a{color:#e07b1a;text-decoration:none}
+
+:root{
+  --org:#e07b1a;
+  --org-d:#c0620d;
+  --org-l:#fff7f0;
+  --org-m:#ffeedd;
+  --brn:#7c4a1e;
+  --text:#333;
+  --sub:#666;
+  --bd:#e8d5c0;
+  --radius:6px;
+}
+
+/* ── WRAP ── */
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.art-body{padding:20px 0 60px}
+
+/* ── SECTION (h2) ── */
+.sec{margin-bottom:36px}
+.sec-body{
+  border:1px solid var(--bd);border-top:none;
+  border-radius:0 0 var(--radius) var(--radius);
+  padding:18px 16px;background:#fff;
+}
+.sec-hd-plain{
+  background:var(--org-m);border-left:4px solid var(--org);
+  padding:12px 16px;
+  font-size:15px;font-weight:700;color:#222;line-height:1.5;
+  border-radius:var(--radius) var(--radius) 0 0;
+}
+.sec-body p{font-size:13.5px;line-height:1.9;color:var(--text);margin-bottom:12px}
+.sec-body p:last-child{margin-bottom:0}
+
+/* ── H3 ── */
+.h3{
+  font-size:13.5px;font-weight:700;color:var(--brn);
+  border-bottom:1px dashed var(--bd);
+  padding:0 0 6px;margin:18px 0 10px;
+}
+
+.natsu-top-img{width:100%;height:auto;border-radius:6px;border:1px solid var(--bd);display:block;margin-bottom:14px}
+
+/* ── REASON CAROUSEL ── */
+.carousel-wrap{margin:14px 0}
+.carousel-track{
+  display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:2px 2px 10px;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.carousel-track::-webkit-scrollbar{display:none}
+.reason-card{
+  flex:0 0 82%;scroll-snap-align:start;
+  background:#fff9f3;border:1px solid #f5c880;border-radius:var(--radius);
+  padding:16px 16px 14px;
+}
+.reason-num{
+  width:28px;height:28px;border-radius:50%;background:var(--org);color:#fff;
+  font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  margin-bottom:10px;
+}
+.reason-ttl{font-size:13.5px;font-weight:700;color:var(--org-d);margin-bottom:8px;line-height:1.6}
+.reason-txt{font-size:12.5px;line-height:1.8;color:var(--text)}
+.reason-img{margin:8px 0 10px;width:100%;height:auto;border-radius:6px;border:1px solid var(--bd);display:block}
+
+/* ── SAMPLE CAROUSEL (framed artwork) ── */
+.sc-card{
+  flex:0 0 62%;scroll-snap-align:start;
+  background:#fff;border:1px solid var(--bd);border-radius:var(--radius);
+  overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+.sc-card img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.sc-card .sc-cap{padding:9px 10px;font-size:12.5px;font-weight:700;color:var(--org-d);text-align:center;background:var(--org-l)}
+@media(min-width:600px){
+  .sc-card{flex:0 0 30%}
+  .reason-card{flex:0 0 46%}
+}
+
+.carousel-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:4px}
+.car-btn{
+  width:32px;height:32px;border-radius:50%;border:1px solid var(--bd);
+  background:#fff;color:var(--org-d);font-size:16px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;
+}
+.car-btn:hover{background:var(--org-l)}
+.car-dots{display:flex;gap:6px}
+.car-dots .dot{width:6px;height:6px;border-radius:50%;background:var(--bd);cursor:pointer;transition:width .2s,border-radius .2s}
+.car-dots .dot.active{background:var(--org);width:16px;border-radius:4px}
+
+/* ── PRICE SIMULATOR WIDGET ── */
+#priceSim{margin:14px 0}
+#priceSim .sim-card{background:#fff;border-radius:var(--radius);margin-bottom:14px;overflow:hidden;border:1px solid var(--bd)}
+#priceSim .sim-card-hd{background:var(--org);color:#fff;font-weight:700;font-size:13.5px;padding:10px 14px}
+#priceSim .sim-blk{padding:14px}
+#priceSim .sim-blk + .sim-blk{border-top:1px solid #f0e8dc}
+#priceSim .sim-blk-hd{
+  background:var(--org-l);border:1px solid var(--bd);border-radius:4px;
+  padding:8px 12px;display:flex;align-items:center;justify-content:space-between;
+  font-size:12.5px;font-weight:700;color:var(--brn);margin-bottom:10px;
+}
+#priceSim .sim-req{background:#e2483d;color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;flex-shrink:0}
+#priceSim select{
+  width:100%;padding:11px 12px;font-size:13.5px;border:1px solid #444;border-radius:4px;
+  background:#fff;font-family:inherit;color:#333;appearance:none;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3e%3cpath fill='%23e07b1a' d='M0 0l6 8 6-8z'/%3e%3c/svg%3e");
+  background-repeat:no-repeat;background-position:right 14px center;background-size:11px;
+}
+#priceSim .sim-note{font-size:11px;color:var(--sub);margin-top:10px;line-height:1.7}
+#priceSim .sim-size-opt{
+  border:2px solid var(--bd);border-radius:6px;padding:12px 14px;margin-bottom:10px;
+  display:flex;align-items:center;gap:12px;cursor:pointer;position:relative;background:#fff;
+}
+#priceSim .sim-size-opt input{width:18px;height:18px;accent-color:var(--org);flex-shrink:0}
+#priceSim .sim-size-opt.sim-sel{border-color:var(--org);background:#fffbea}
+#priceSim .sim-info{flex:1}
+#priceSim .sim-info .sim-nm{font-weight:700;font-size:13.5px}
+#priceSim .sim-info .sim-pr{color:#d1391f;font-weight:700;font-size:13.5px;margin-top:2px}
+#priceSim .sim-info .sim-pr small{font-size:11px;font-weight:400;color:var(--sub)}
+#priceSim .sim-badge{position:absolute;top:-9px;right:10px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;color:#fff}
+#priceSim .sim-badge.sim-b1{background:var(--org)}
+#priceSim .sim-badge.sim-b2{background:#e88ba0}
+#priceSim .sim-badge.sim-b3{background:#8bc34a}
+#priceSim .sim-people-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+#priceSim .sim-people-table th,#priceSim .sim-people-table td{border:1px solid var(--bd);padding:6px 4px;text-align:center}
+#priceSim .sim-people-table th{background:var(--org-l);color:var(--brn)}
+#priceSim .sim-people-table td.sim-add{color:#d1391f;font-weight:700}
+#priceSim .sim-radio-row{display:flex;gap:14px;flex-wrap:wrap}
+#priceSim .sim-radio-item{display:flex;align-items:center;gap:6px;font-size:13px}
+#priceSim .sim-radio-item input{width:16px;height:16px;accent-color:var(--org)}
+#priceSim .sim-breakdown{background:var(--org-l);border:1px solid var(--bd);border-radius:6px;padding:12px 14px}
+#priceSim .sim-breakdown h3{font-size:13px;color:var(--brn);margin-bottom:8px}
+#priceSim .sim-brk-row{display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px dashed var(--bd)}
+#priceSim .sim-brk-row:last-child{border-bottom:none}
+#priceSim .sim-brk-row .v{font-weight:700}
+#priceSim .sim-brk-row.sim-sum{border-top:2px solid var(--org);margin-top:4px;padding-top:8px;font-weight:700;font-size:14px}
+#priceSim .sim-brk-row.sim-sum .v{color:#d1391f;font-size:18px}
+
+/* ── CLICKABLE BANNER ── */
+a.cta-img{
+  display:block;
+  cursor:pointer;
+  transition:transform .15s, box-shadow .15s, opacity .15s;
+}
+a.cta-img:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  opacity:.93;
+}
+a.cta-img:active{
+  transform:translateY(0);
+  box-shadow:none;
+  opacity:.85;
+}
+a.cta-img img{
+  display:block;
+  width:100%;
+  height:auto;
+  cursor:pointer;
+}
+
+/* ── INLINE MICRO CTA ── */
+.mini-cta{
+  background:var(--org);color:#fff !important;
+  display:inline-block;border-radius:4px;
+  padding:9px 20px;font-size:12.5px;font-weight:700;
+  white-space:nowrap;text-decoration:none;
+}
+.mini-cta:hover{background:var(--org-d);color:#fff}
+.mini-cta-wrap{text-align:center;margin-top:12px}
+.lead-line{
+  text-align:center;font-size:13.5px;font-weight:700;
+  color:var(--org-d);margin:16px 0 6px;line-height:1.7;
+}
+
+/* ── COMPARE TABLE (他社比較) ── */
+.cmp-note{
+  background:#faf6ee;border:1px solid var(--bd);border-radius:var(--radius);
+  padding:10px 12px;font-size:11px;color:var(--sub);line-height:1.8;margin-bottom:14px;
+}
+.cmp-wrap{overflow-x:auto;margin:4px 0 14px}
+.cmp-table{width:100%;border-collapse:collapse;font-size:12px;min-width:460px}
+.cmp-table th{
+  background:var(--org-d);color:#fff;
+  padding:10px 6px;text-align:center;font-weight:700;font-size:11px;line-height:1.5;
+}
+.cmp-table th.cmp-hl{background:var(--org)}
+.cmp-table td{
+  padding:11px 6px;border-bottom:1px solid #eee;
+  text-align:center;vertical-align:middle;font-size:14px;
+}
+.cmp-table td:first-child{
+  font-weight:700;color:var(--brn);font-size:12px;line-height:1.5;
+}
+.cmp-table tr:nth-child(even) td{background:#fdf8f2}
+.cmp-table td.cmp-hl{background:var(--org-l)}
+.cmp-table tr:nth-child(even) td.cmp-hl{background:#ffeedd}
+.cmp-star{color:var(--org);letter-spacing:1px}
+.cmp-star .off{color:#e0dcd4}
+.cmp-cta{
+  background:var(--org-l);border:1px solid var(--bd);border-radius:var(--radius);
+  padding:12px 14px;font-size:13px;line-height:1.8;text-align:center;
+}
+.cmp-cta strong{color:var(--org-d)}
+
+/* ── VOICE (customer testimonials) ── */
+.voice-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:10px}
+.vc{background:#fff;border-radius:var(--radius);padding:14px 16px;border:1px solid var(--bd)}
+.vc .vc-tag{display:inline-block;background:var(--org);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:2px;margin-bottom:8px}
+.vc .vc-star{color:#f5a623;font-size:13px;letter-spacing:1px;margin-bottom:6px}
+.vc .vt{font-size:12.5px;color:#444;line-height:1.8;margin-bottom:8px}
+.vc .vf{font-size:11px;color:#999;text-align:right}
+</style>
+</head>
+<body>
+
+<div class="art-body">
+<div class="wrap">
+
+  <!-- NATSUMIKAN -->
+  <section class="sec" id="natsumikan">
+    <h2 class="sec-hd-plain">特別な贈り物なら<wbr>似顔絵なつみかん</h2>
+    <div class="sec-body">
+      <img class="natsu-top-img" src="images/natsumikan-collage.jpg" alt="似顔絵なつみかんの制作作品コラージュ">
+      <p>ここまでのチェックポイントを踏まえたうえで、似顔絵ギフトとしておすすめしたいのが、専門店<strong>「似顔絵なつみかん」</strong>です。一枚一枚を手描きで丁寧に仕上げる確かな品質で、大切な方への特別な贈り物として多くのご家族に選ばれています。</p>
+
+      <p class="h3">似顔絵なつみかんが<wbr>選ばれる5つの理由</p>
+      <div class="carousel-wrap">
+        <div class="carousel-track" id="reasonTrack">
+          <div class="reason-card">
+            <div class="reason-num">1</div>
+            <div class="reason-ttl">すべて手描き・水彩絵の具による一点物</div>
+            <img class="reason-img" src="images/reason-touch.webp" alt="あったかタッチ・くっきりタッチのサンプル似顔絵">
+            <p class="reason-txt">写真をもとに、スタッフが一枚一枚水彩絵の具で手描きします。印刷やAI生成ではなく、温かみのある手描きだからこそ「世界に一つだけ」の特別な贈り物になります。絵のタッチも、写実的で幅広い世代に受け入れられやすいタッチと、やわらかく優しい雰囲気のタッチの2種類から、贈る相手の雰囲気に合わせて選択可能です。</p>
+          </div>
+          <div class="reason-card">
+            <div class="reason-num">2</div>
+            <div class="reason-ttl">制作実績30万枚以上の安心感</div>
+            <img class="reason-img" src="images/reason-process.webp" alt="水彩絵の具で似顔絵を手描きしている制作風景">
+            <p class="reason-txt">これまでの制作実績は30万枚以上。似顔絵専門店としての豊富なノウハウがあるからこそ、初めての注文でも安心して任せられます。</p>
+          </div>
+          <div class="reason-card">
+            <div class="reason-num">3</div>
+            <div class="reason-ttl">全商品、額縁付き・ギフトラッピング済みでお届け</div>
+            <img class="reason-img" src="images/reason-frame.webp" alt="額縁に入った完成似顔絵を持つスタッフ">
+            <p class="reason-txt">届いたその日にそのまま渡せるよう、額縁入り・ギフト包装済みの状態で発送。当日バタバタと準備する必要がありません。額縁はナチュラル・ブラウン・ブラックの3色から、お部屋のインテリアに合わせて選べます。</p>
+          </div>
+          <div class="reason-card">
+            <div class="reason-num">4</div>
+            <div class="reason-ttl">人数追加・ペットの同時掲載もOK</div>
+            <img class="reason-img" src="images/reason-family.webp" alt="祖父母と家族全員を描いた敬老の日似顔絵イラスト">
+            <p class="reason-txt">祖父母お二人そろって、家族みんなで、あるいは愛犬・愛猫と一緒に描いてもらうことも可能です（人数追加は有料）。</p>
+          </div>
+          <div class="reason-card">
+            <div class="reason-num">5</div>
+            <div class="reason-ttl">最短翌日発送・お急ぎ対応も無料</div>
+            <img class="reason-img" src="images/reason-delivery.webp" alt="似顔絵ギフトの配送イメージ">
+            <p class="reason-txt">「お祝いの日に間に合わない…」という直前の注文でも、9割のご注文でお急ぎ対応が可能。スマートフォンで写真を送るだけで簡単に注文でき、LINEでの注文・相談にも対応しています。</p>
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button type="button" class="car-btn" id="carPrev" aria-label="前の理由へ">‹</button>
+          <div class="car-dots" id="carDots"></div>
+          <button type="button" class="car-btn" id="carNext" aria-label="次の理由へ">›</button>
+        </div>
+      </div>
+
+      <p class="h3">似顔絵なつみかん<wbr>カンタン料金<wbr>シミュレーション</p>
+      <p>タッチ・サイズ・人数を選ぶだけで、税込価格がその場でわかります。気になる組み合わせをチェックしてみてください。</p>
+
+      <div class="sim-widget" id="priceSim">
+        <div class="sim-card">
+          <div class="sim-card-hd">タッチ・サイズ</div>
+          <div class="sim-blk">
+            <div class="sim-blk-hd">似顔絵の用途を選択ください<span class="sim-req">必須</span></div>
+            <select id="simPurpose">
+              <option selected>敬老の日のお祝いに</option>
+              <option>長寿のお祝いに</option>
+              <option>結婚記念日に</option>
+              <option>誕生日のお祝いに</option>
+              <option>カップル記念日</option>
+              <option>退職・定年祝い</option>
+              <option>ペットの似顔絵</option>
+              <option>ご家族の似顔絵</option>
+              <option>卒業、入学祝い</option>
+              <option>引っ越し祝い</option>
+              <option>出産祝い</option>
+              <option>開店祝い(お店の〇周年)</option>
+              <option>優勝景品(〇〇大会など)</option>
+              <option>Instagram、YouTube等、SNSアイコン</option>
+              <option>ウェルカム、サンクスボード</option>
+              <option>クリスマスプレゼントに</option>
+              <option>その他</option>
+            </select>
+            <div class="sim-note">※用途の選択は料金に影響しません（ご参考情報です）</div>
+          </div>
+
+          <div class="sim-blk">
+            <div class="sim-blk-hd">似顔絵サイズを選択ください<span class="sim-req">必須</span></div>
+
+            <label class="sim-size-opt sim-sel" data-size="S">
+              <input type="radio" name="simSize" value="S" checked>
+              <div class="sim-info">
+                <div class="sim-nm">Sサイズ <span style="font-weight:400">2L（17.8cm×12.7cm）</span></div>
+                <div class="sim-pr">8,980円 <small>（税込 9,878円〜）</small></div>
+              </div>
+              <span class="sim-badge sim-b1">最安値</span>
+            </label>
+
+            <label class="sim-size-opt" data-size="M">
+              <input type="radio" name="simSize" value="M">
+              <div class="sim-info">
+                <div class="sim-nm">Mサイズ <span style="font-weight:400">A4（29.7cm×21.0cm）</span></div>
+                <div class="sim-pr">14,900円 <small>（税込 16,390円〜）</small></div>
+              </div>
+              <span class="sim-badge sim-b2">人気NO.1</span>
+            </label>
+
+            <label class="sim-size-opt" data-size="L">
+              <input type="radio" name="simSize" value="L">
+              <div class="sim-info">
+                <div class="sim-nm">Lサイズ <span style="font-weight:400">A3（42.0cm×29.7cm）</span></div>
+                <div class="sim-pr">33,000円 <small>（税込 36,300円〜）</small></div>
+              </div>
+              <span class="sim-badge sim-b3">コスパ◎</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="sim-card">
+          <div class="sim-card-hd">額縁・人数</div>
+          <div class="sim-blk">
+            <div class="sim-blk-hd">似顔絵の人数を選択ください<span class="sim-req">必須</span></div>
+            <select id="simPeople"></select>
+
+            <p style="font-size:11.5px;color:var(--sub);margin-top:10px">人数による追加料金・選択可能人数は下記をご参照ください。</p>
+            <table class="sim-people-table">
+              <tr><th>サイズ</th><th>追加料金</th><th>最大人数</th></tr>
+              <tr><td>S</td><td class="sim-add">2名様から1名ずつ +3,850円</td><td>3名様</td></tr>
+              <tr><td>M</td><td class="sim-add">3名様から1名ずつ +4,950円</td><td>6名様</td></tr>
+              <tr><td>L</td><td class="sim-add">5名様から1名ずつ +5,500円</td><td>20名様</td></tr>
+            </table>
+          </div>
+
+          <div class="sim-blk">
+            <div class="sim-blk-hd">ラッピングを希望する<span class="sim-req">必須</span></div>
+            <div class="sim-radio-row">
+              <label class="sim-radio-item"><input type="radio" name="simWrap" value="1"> 希望する（手数料550円）</label>
+              <label class="sim-radio-item"><input type="radio" name="simWrap" value="0" checked> 希望しない</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-breakdown">
+          <h3>お見積り内訳<wbr>（税込）</h3>
+          <div id="simBrk"></div>
+        </div>
+      </div>
+
+      <p style="font-size:12px;color:var(--sub)">※本シミュレーターの金額は概算です。ご注文内容の詳細やキャンペーン適用状況により実際の金額と異なる場合があります。表示価格はすべて消費税10%込みです。</p>
+      <p>似顔絵に添えるメッセージは自由に指定でき、衣装（服装）の希望も注文時に伝えることができます。</p>
+
+      <p class="lead-line">気になる金額が分かったら、そのまま公式サイトでチェックできます</p>
+      <a href="https://skui.jp/redirect/natsumikancolumn" target="_blank" class="cta-img" style="max-width:520px;margin:8px auto 16px;" aria-label="似顔絵なつみかん公式サイトはこちら">
+        <img src="images/cta-banner.jpg" alt="似顔絵なつみかん公式サイトはこちら">
+      </a>
+    </div>
+  </section>
+
+  <!-- COMPETITOR COMPARISON -->
+  <section class="sec" id="compare">
+    <h2 class="sec-hd-plain">後悔しない<wbr>似顔絵ギフト選びのために、<wbr>他社と比較しました！</h2>
+    <div class="sec-body">
+      <p>似顔絵ギフトは依頼先によって仕上がりも安心感も大きく変わります。マッチング型・デジタル系サービスと見比べることで、<strong>似顔絵なつみかんだからこそ実現できている強み</strong>がより分かりやすくなります。</p>
+
+      <div class="cmp-note">以下は「なつみかん」自身による自己評価であり、第三者機関による客観評価ではありません。マッチング型・デジタル系のサービスにも、基準を満たす店舗は存在します。あくまで一般的な傾向の一例として参考にし、実際の比較は各サービスの公式サイト・サンプルでご確認ください。</div>
+
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <tr>
+            <th>比較項目</th>
+            <th class="cmp-hl">似顔絵なつみかん</th>
+            <th>マッチング型</th>
+            <th>デジタル系</th>
+          </tr>
+          <tr>
+            <td>手描きの温かみ</td>
+            <td class="cmp-hl"><span class="cmp-star">★★★★★</span></td>
+            <td><span class="cmp-star">★★★★<span class="off">☆</span></span></td>
+            <td><span class="cmp-star">★★<span class="off">☆☆☆</span></span></td>
+          </tr>
+          <tr>
+            <td>水彩ならではの質感</td>
+            <td class="cmp-hl"><span class="cmp-star">★★★★★</span></td>
+            <td><span class="cmp-star">★★★<span class="off">☆☆</span></span></td>
+            <td><span class="cmp-star">★<span class="off">☆☆☆☆</span></span></td>
+          </tr>
+          <tr>
+            <td>仕上がりの安定感</td>
+            <td class="cmp-hl"><span class="cmp-star">★★★★★</span></td>
+            <td><span class="cmp-star">★★★<span class="off">☆☆</span></span></td>
+            <td><span class="cmp-star">★★★★<span class="off">☆</span></span></td>
+          </tr>
+          <tr>
+            <td>注文方法の分かりやすさ</td>
+            <td class="cmp-hl"><span class="cmp-star">★★★★★</span></td>
+            <td><span class="cmp-star">★★★<span class="off">☆☆</span></span></td>
+            <td><span class="cmp-star">★★★★★</span></td>
+          </tr>
+          <tr>
+            <td>最短翌日発送への対応</td>
+            <td class="cmp-hl"><span class="cmp-star">★★★★★</span></td>
+            <td><span class="cmp-star">★★<span class="off">☆☆☆</span></span></td>
+            <td><span class="cmp-star">★★★★<span class="off">☆</span></span></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="cmp-cta">
+        気になる仕上がりは、まず<strong>実際の制作例</strong>でチェック。<br>あなたの「贈りたい」にきっと出会えます。
+        <div class="mini-cta-wrap"><a href="#samplecarousel" class="mini-cta">制作例を見てみる</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLE CAROUSEL -->
+  <section class="sec" id="samplecarousel">
+    <h2 class="sec-hd-plain">似顔絵なつみかん<wbr>制作例ご紹介</h2>
+    <div class="sec-body">
+      <p>還暦から古希・喜寿・傘寿・退職祝いまで、お祝いの数だけ異なる一枚に仕上げてきました。<strong style="color:var(--org-d)">「うちの祖父母だったら、どんな似顔絵になるだろう」</strong>——ぜひ想像しながら、あなただけの一枚をご相談ください。</p>
+      <div class="carousel-wrap">
+        <div class="carousel-track" id="scTrack">
+        <div class="sc-card">
+          <img src="images/carousel-kanreki.jpg" alt="還暦祝いの似顔絵制作例">
+          <div class="sc-cap">還暦祝い</div>
+        </div>
+        <div class="sc-card">
+          <img src="images/carousel-koki.jpg" alt="古希祝いの似顔絵制作例">
+          <div class="sc-cap">古希祝い</div>
+        </div>
+        <div class="sc-card">
+          <img src="images/carousel-kizyu.jpg" alt="喜寿祝いの似顔絵制作例">
+          <div class="sc-cap">喜寿祝い</div>
+        </div>
+        <div class="sc-card">
+          <img src="images/carousel-sanzyu.jpg" alt="傘寿祝いの似顔絵制作例">
+          <div class="sc-cap">傘寿祝い</div>
+        </div>
+        <div class="sc-card">
+          <img src="images/carousel-taishoku.jpg" alt="退職祝いの似顔絵制作例">
+          <div class="sc-cap">退職祝い</div>
+        </div>
+        <div class="sc-card">
+          <img src="images/carousel-ryoshin.jpg" alt="ご両親への贈り物の似顔絵制作例">
+          <div class="sc-cap">ご両親への贈り物</div>
+        </div>
+        <div class="sc-card">
+          <img src="images/carousel-hahanohi.jpg" alt="母の日の贈り物の似顔絵制作例">
+          <div class="sc-cap">母の日の贈り物</div>
+        </div>
+        <div class="sc-card">
+          <img src="images/carousel-chichinohi.jpg" alt="父の日の贈り物の似顔絵制作例">
+          <div class="sc-cap">父の日の贈り物</div>
+        </div>
+        </div>
+        <div class="carousel-nav">
+          <button type="button" class="car-btn" id="scPrev" aria-label="前の制作例へ">‹</button>
+          <div class="car-dots" id="scDots"></div>
+          <button type="button" class="car-btn" id="scNext" aria-label="次の制作例へ">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE -->
+  <section class="sec" id="voice">
+    <h2 class="sec-hd-plain">お客様の声をご紹介</h2>
+    <div class="sec-body">
+      <p>実際にご依頼いただいたお客様から、たくさんの嬉しいお声が届いています。掲載中のレビューはすべて<strong>★5評価</strong>です。</p>
+      <div class="voice-cards">
+        <div class="vc">
+          <div class="vc-tag">還暦のお祝い</div>
+          <div class="vc-star">★★★★★</div>
+          <div class="vt">実物写真から若々しく、優しい雰囲気で仕上げてくださり渡した時のわあ！という感動は忘れられないものになりました。本当に似顔絵なつみかんさんの絵をプレゼントして大正解だなと思いました。</div>
+          <div class="vf">大阪府 Y様</div>
+        </div>
+        <div class="vc">
+          <div class="vc-tag">喜寿のお祝いに</div>
+          <div class="vc-star">★★★★★</div>
+          <div class="vt">品質、クオリティ高くとても喜んでいただけました。届くまでどんな感じかわからなかったですが実物みて満足でした。また母親の喜寿お祝いなどで利用したいと思いました。</div>
+          <div class="vf">和歌山県 T様</div>
+        </div>
+        <div class="vc">
+          <div class="vc-tag">米寿のお祝い</div>
+          <div class="vc-star">★★★★★</div>
+          <div class="vt">気持ち良く対応してくれてお願いしやすかったです。プレゼントをいろいろ考えたのですが、欲しがる物もなく、悩んでいたら、似顔絵もいいとのコメントを見つけ依頼しました。義父も喜んでいて、帰宅するとすぐ、自分の机の上に飾り、毎日見てくれています。</div>
+          <div class="vf">愛知県 H様</div>
+        </div>
+        <div class="vc">
+          <div class="vc-tag">退職のお祝いに</div>
+          <div class="vc-star">★★★★★</div>
+          <div class="vt">商品例でみさせて頂いたどの作品も贈る側の想いや贈られる側の笑顔が想像できるものでした。額縁入りで、先生の特徴もとらえられていてとても満足の仕上がりです。</div>
+          <div class="vf">東京都 K様</div>
+        </div>
+        <div class="vc">
+          <div class="vc-tag">ご家族の似顔絵</div>
+          <div class="vc-star">★★★★★</div>
+          <div class="vt">とても可愛らしい！！母親は泣いて喜んでくれました。父親は照れていました。ありがとうございました。</div>
+          <div class="vf">千葉県 H様</div>
+        </div>
+        <div class="vc">
+          <div class="vc-tag">誕生日のお祝いに</div>
+          <div class="vc-star">★★★★★</div>
+          <div class="vt">柔らかくあたたかい素敵な似顔絵でした。似顔絵はもちろん一緒に描いていただいたペットや背景、文字も丁寧に書かれていました。受け取った母もとても喜んでいます。</div>
+          <div class="vf">宮城県 N様</div>
+        </div>
+      </div>
+
+      <p class="lead-line">大切な方への贈り物に、似顔絵なつみかんを選んでみませんか？</p>
+      <a href="https://skui.jp/redirect/natsumikancolumn" target="_blank" class="cta-img" style="max-width:520px;margin:8px auto 0;" aria-label="似顔絵なつみかん公式サイトはこちら">
+        <img src="images/cta-banner.jpg" alt="似顔絵なつみかん公式サイトはこちら">
+      </a>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<script>
+(function(){
+  const track = document.getElementById("reasonTrack");
+  if(!track) return;
+  const cards = Array.from(track.children);
+  const dotsWrap = document.getElementById("carDots");
+  const prevBtn = document.getElementById("carPrev");
+  const nextBtn = document.getElementById("carNext");
+  cards.forEach((_,i)=>{
+    const d=document.createElement("span");
+    d.className="dot"+(i===0?" active":"");
+    d.addEventListener("click",()=>{
+      cards[i].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
+    });
+    dotsWrap.appendChild(d);
+  });
+  const dots = Array.from(dotsWrap.children);
+  function activeIndex(){
+    const trackLeft = track.getBoundingClientRect().left;
+    let idx=0, min=Infinity;
+    cards.forEach((c,i)=>{
+      const d=Math.abs(c.getBoundingClientRect().left - trackLeft);
+      if(d<min){min=d;idx=i;}
+    });
+    return idx;
+  }
+  function updateDots(){
+    const idx=activeIndex();
+    dots.forEach((d,i)=>d.classList.toggle("active",i===idx));
+  }
+  let scrollTimer;
+  track.addEventListener("scroll",()=>{
+    clearTimeout(scrollTimer);
+    scrollTimer=setTimeout(updateDots,80);
+  });
+  prevBtn.addEventListener("click",()=>{
+    const idx=Math.max(0,activeIndex()-1);
+    cards[idx].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
+  });
+  nextBtn.addEventListener("click",()=>{
+    const idx=Math.min(cards.length-1,activeIndex()+1);
+    cards[idx].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
+  });
+})();
+
+(function(){
+  const track = document.getElementById("scTrack");
+  if(!track) return;
+  const cards = Array.from(track.children);
+  const dotsWrap = document.getElementById("scDots");
+  const prevBtn = document.getElementById("scPrev");
+  const nextBtn = document.getElementById("scNext");
+  cards.forEach((_,i)=>{
+    const d=document.createElement("span");
+    d.className="dot"+(i===0?" active":"");
+    d.addEventListener("click",()=>{
+      cards[i].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
+    });
+    dotsWrap.appendChild(d);
+  });
+  const dots = Array.from(dotsWrap.children);
+  function activeIndex(){
+    const trackLeft = track.getBoundingClientRect().left;
+    let idx=0, min=Infinity;
+    cards.forEach((c,i)=>{
+      const d=Math.abs(c.getBoundingClientRect().left - trackLeft);
+      if(d<min){min=d;idx=i;}
+    });
+    return idx;
+  }
+  function updateDots(){
+    const idx=activeIndex();
+    dots.forEach((d,i)=>d.classList.toggle("active",i===idx));
+  }
+  let scrollTimer;
+  track.addEventListener("scroll",()=>{
+    clearTimeout(scrollTimer);
+    scrollTimer=setTimeout(updateDots,80);
+  });
+  prevBtn.addEventListener("click",()=>{
+    const idx=Math.max(0,activeIndex()-1);
+    cards[idx].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
+  });
+  nextBtn.addEventListener("click",()=>{
+    const idx=Math.min(cards.length-1,activeIndex()+1);
+    cards[idx].scrollIntoView({behavior:"smooth",inline:"start",block:"nearest"});
+  });
+})();
+
+(function(){
+  const SIZES = {
+    S:{ name:'Sサイズ（2L）', base:9878, threshold:1, maxPeople:3,  perPerson:3850 },
+    M:{ name:'Mサイズ（A4）', base:16390, threshold:2, maxPeople:6,  perPerson:4950 },
+    L:{ name:'Lサイズ（A3）', base:36300, threshold:4, maxPeople:20, perPerson:5500 }
+  };
+  const sim = document.getElementById("priceSim");
+  if(!sim) return;
+  const yen = n => "￥" + n.toLocaleString("ja-JP");
+
+  function currentSize(){
+    return sim.querySelector('input[name="simSize"]:checked').value;
+  }
+  function populatePeople(){
+    const cfg = SIZES[currentSize()];
+    const sel = sim.querySelector("#simPeople");
+    const prevVal = sel.value;
+    sel.innerHTML = "";
+    for(let i=1;i<=cfg.maxPeople;i++){
+      const extra = Math.max(0, i - cfg.threshold) * cfg.perPerson;
+      const opt = document.createElement("option");
+      opt.value = i;
+      opt.textContent = extra > 0 ? `${i}名様（追加 +${extra.toLocaleString("ja-JP")}円）` : `${i}名様`;
+      sel.appendChild(opt);
+    }
+    if(prevVal && Number(prevVal) <= cfg.maxPeople){ sel.value = prevVal; }
+  }
+  function updateSizeSelection(){
+    sim.querySelectorAll(".sim-size-opt").forEach(el=>{
+      el.classList.toggle("sim-sel", el.dataset.size === currentSize());
+    });
+  }
+  function calc(){
+    const cfg = SIZES[currentSize()];
+    const people = Number(sim.querySelector("#simPeople").value || 1);
+    const extraPeople = Math.max(0, people - cfg.threshold) * cfg.perPerson;
+    const wrap = Number(sim.querySelector('input[name="simWrap"]:checked').value) ? 550 : 0;
+    const total = cfg.base + extraPeople + wrap;
+
+    const rows = [];
+    rows.push([`${cfg.name}（1名様分）`, cfg.base]);
+    if(extraPeople > 0) rows.push([`人数追加（${people}名様）`, extraPeople]);
+    if(wrap > 0) rows.push(["ラッピング手数料", wrap]);
+
+    const brk = sim.querySelector("#simBrk");
+    brk.innerHTML = rows.map(r=>`<div class="sim-brk-row"><span>${r[0]}</span><span class="v">${yen(r[1])}</span></div>`).join("")
+      + `<div class="sim-brk-row sim-sum"><span>合計金額（税込）</span><span class="v">${yen(total)}〜</span></div>`;
+  }
+
+  sim.querySelectorAll('input[name="simSize"]').forEach(r=>{
+    r.addEventListener("change", ()=>{ updateSizeSelection(); populatePeople(); calc(); });
+  });
+  sim.querySelectorAll(".sim-size-opt").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      el.querySelector('input[name="simSize"]').checked = true;
+      updateSizeSelection(); populatePeople(); calc();
+    });
+  });
+  sim.querySelector("#simPeople").addEventListener("change", calc);
+  sim.querySelectorAll('input[name="simWrap"]').forEach(r=>r.addEventListener("change", calc));
+
+  populatePeople();
+  calc();
+})();
+</script>
+</body>
+</html>
