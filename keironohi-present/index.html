@@ -258,14 +258,18 @@ a{color:#e07b1a;text-decoration:none}
 .sample-gallery img{width:100%;object-fit:cover;border-radius:var(--radius);border:1px solid var(--bd);display:block;box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .sample-gallery img.tile-portrait{aspect-ratio:3/4}
 .sample-gallery img.tile-landscape{aspect-ratio:4/3}
-.carousel-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:4px}
+.carousel-viewport{position:relative}
 .car-btn{
-  width:32px;height:32px;border-radius:50%;border:1px solid var(--bd);
-  background:#fff;color:var(--org-d);font-size:16px;font-weight:700;
+  position:absolute;top:45%;transform:translateY(-50%);
+  width:34px;height:34px;border-radius:50%;border:1px solid var(--bd);
+  background:rgba(255,255,255,.95);color:var(--org-d);font-size:17px;font-weight:700;
   display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;
+  box-shadow:0 2px 8px rgba(0,0,0,.2);z-index:5;
 }
+.car-btn.car-prev{left:6px}
+.car-btn.car-next{right:6px}
 .car-btn:hover{background:var(--org-l)}
-.car-dots{display:flex;gap:6px}
+.car-dots{display:flex;gap:6px;justify-content:center;margin-top:10px}
 .car-dots .dot{width:6px;height:6px;border-radius:50%;background:var(--bd);cursor:pointer;transition:width .2s,border-radius .2s}
 .car-dots .dot.active{background:var(--org);width:16px;border-radius:4px}
 @media(min-width:600px){
@@ -904,6 +908,7 @@ a.banner img, a.cta-img img{
 
       <p class="h3">似顔絵なつみかんが<wbr>選ばれる5つの理由</p>
       <div class="carousel-wrap">
+        <div class="carousel-viewport">
         <div class="carousel-track" id="reasonTrack">
           <div class="reason-card">
             <div class="reason-num">1</div>
@@ -936,11 +941,10 @@ a.banner img, a.cta-img img{
             <p class="reason-txt">「お祝いの日に間に合わない…」という直前の注文でも、9割のご注文でお急ぎ対応が可能。スマートフォンで写真を送るだけで簡単に注文でき、LINEでの注文・相談にも対応しています。</p>
           </div>
         </div>
-        <div class="carousel-nav">
-          <button type="button" class="car-btn" id="carPrev" aria-label="前の理由へ">‹</button>
-          <div class="car-dots" id="carDots"></div>
-          <button type="button" class="car-btn" id="carNext" aria-label="次の理由へ">›</button>
+        <button type="button" class="car-btn car-prev" id="carPrev" aria-label="前の理由へ">‹</button>
+        <button type="button" class="car-btn car-next" id="carNext" aria-label="次の理由へ">›</button>
         </div>
+        <div class="car-dots" id="carDots"></div>
       </div>
 
       <p class="h3">似顔絵なつみかん<wbr>カンタン料金<wbr>シミュレーション</p>
@@ -1107,6 +1111,7 @@ a.banner img, a.cta-img img{
     <div class="sec-body">
       <p>還暦から古希・喜寿・傘寿・退職祝いまで、お祝いの数だけ異なる一枚に仕上げてきました。<strong style="color:var(--org-d)">「うちの祖父母だったら、どんな似顔絵になるだろう」</strong>——ぜひ想像しながら、あなただけの一枚をご相談ください。</p>
       <div class="carousel-wrap">
+        <div class="carousel-viewport">
         <div class="carousel-track" id="scTrack">
         <div class="sc-card">
           <img src="images/carousel-kanreki.jpg" alt="還暦祝いの似顔絵制作例">
@@ -1141,11 +1146,10 @@ a.banner img, a.cta-img img{
           <div class="sc-cap">父の日の贈り物</div>
         </div>
         </div>
-        <div class="carousel-nav">
-          <button type="button" class="car-btn" id="scPrev" aria-label="前の制作例へ">‹</button>
-          <div class="car-dots" id="scDots"></div>
-          <button type="button" class="car-btn" id="scNext" aria-label="次の制作例へ">›</button>
+        <button type="button" class="car-btn car-prev" id="scPrev" aria-label="前の制作例へ">‹</button>
+        <button type="button" class="car-btn car-next" id="scNext" aria-label="次の制作例へ">›</button>
         </div>
+        <div class="car-dots" id="scDots"></div>
       </div>
     </div>
   </section>
