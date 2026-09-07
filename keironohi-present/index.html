@@ -1454,7 +1454,8 @@ document.querySelectorAll(".faq-q").forEach(q=>{
 
     const brk = sim.querySelector("#simBrk");
     brk.innerHTML = rows.map(r=>`<div class="sim-brk-row"><span>${r[0]}</span><span class="v">${yen(r[1])}</span></div>`).join("")
-      + `<div class="sim-brk-row sim-sum"><span>合計金額（税込）</span><span class="v">${yen(total)}〜</span></div>`;
+      + `<div class="sim-brk-row sim-sum"><span>合計金額（税込）</span><span class="v">${yen(total)}〜</span></div>`
+      + (currentSize()==="S" ? `<div class="sim-note" style="margin-top:8px">※Sサイズは別途送料が発生します。</div>` : "");
   }
 
   sim.querySelectorAll('input[name="simSize"]').forEach(r=>{
